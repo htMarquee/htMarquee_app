@@ -1,0 +1,60 @@
+{
+  "latest": {
+    "version": "1.0.16",
+    "released_at": "2026-04-08T22:49:01Z",
+    "changelog": "### New Features\n- Adjustable banner font size with slider (1.0\u20138.0vh range)\n- Banner font color picker \u2014 choose any color for the header text\n- Public update distribution \u2014 all Pis now pull updates from GitHub\n- Default manifest URL set automatically for new and existing installs\n\n### Improvements\n- TMDB and OMDb API key requirements added to product website\n- Forgejo instance migrated to HTTPS across all CI and documentation\n- Deploy workflow updated with display/ and fonts/ sync reminders\n\n### Infrastructure\n- CI pipeline now publishes obfuscated releases to GitHub (htMarquee/htMarquee_app)\n- Manifest and release notes pushed to GitHub for public access\n- Website stripped to static-only for initial launch (chat widget deferred)",
+    "min_version": "0.0.1",
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.16/htmarquee-1.0.16.tar.gz",
+    "tarball_sha256": "557edc8b797d691f941ac34e6b27eb9a63fbaf510e4404c4af1b0d2864ca1837",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.16/htmarquee-1.0.16.tar.gz.sig",
+    "size_bytes": 39502279,
+    "requires_restart": true
+  },
+  "releases": [
+    {
+      "version": "1.0.16",
+      "date": "2026-04-08",
+      "notes": "### New Features\n- Adjustable banner font size with slider (1.0\u20138.0vh range)\n- Banner font color picker \u2014 choose any color for the header text\n- Public update distribution \u2014 all Pis now pull updates from GitHub\n- Default manifest URL set automatically for new and existing installs\n\n### Improvements\n- TMDB and OMDb API key requirements added to product website\n- Forgejo instance migrated to HTTPS across all CI and documentation\n- Deploy workflow updated with display/ and fonts/ sync reminders\n\n### Infrastructure\n- CI pipeline now publishes obfuscated releases to GitHub (htMarquee/htMarquee_app)\n- Manifest and release notes pushed to GitHub for public access\n- Website stripped to static-only for initial launch (chat widget deferred)"
+    },
+    {
+      "version": "1.0.15",
+      "date": "2026-04-08",
+      "notes": "### New Features\n- Customizable banner fonts for the display header\n- 8 built-in Google Fonts: Audiowide, Barlow Condensed, Bitcount Grid Double, Doto, Geo, Monoton, Sixtyfour, Zen Tokyo Zoo\n- Upload custom .ttf/.otf/.woff/.woff2 font files for the banner\n- Separate font selection for idle, Plex, and Jellyfin playback banners\n- Font changes hot-apply via WebSocket \u2014 no restart needed\n- Release notes now displayed in the Software Update section\n- Current version notes shown with expandable release history\n\n### Bug Fixes\n- Rollback progress bar now advances instead of staying stuck at 0%\n- Rollback button grayed out when no previous version is available"
+    },
+    {
+      "version": "1.0.14",
+      "date": "2026-04-07",
+      "notes": "### LED & Website Fixes\n- LED off now clears entire strip regardless of configured count\n- Fixed OTA slot cleanup permission errors\n- Fixed 11 website bugs: favicon, mobile CTA, CORS, OG tags, accessibility\n- Fixed 20+ inaccuracies in product website and chat API knowledge base"
+    },
+    {
+      "version": "1.0.13",
+      "date": "2026-04-07",
+      "notes": "### LED UI & OTA Improvements\n- Fixed LED sections not graying out when GPIO disabled\n- OTA updates now install Pi-specific dependencies automatically"
+    },
+    {
+      "version": "1.0.12",
+      "date": "2026-04-07",
+      "notes": "### LED Strip Control\n- LED Strip Control grays out when GPIO disabled\n- GPIO toggle shows restart prompt with one-click restart button\n- Added GPIO pinout diagram to hardware settings"
+    },
+    {
+      "version": "1.0.11",
+      "date": "2026-04-05",
+      "notes": "### Bug Fix\n- Fixed license tier detection \u2014 UI no longer shows matinee locks with a valid Premiere license"
+    },
+    {
+      "version": "1.0.9",
+      "date": "2026-04-05",
+      "notes": "### Security\n- Improved license code obfuscation with per-build random identifier renaming"
+    },
+    {
+      "version": "1.0.5",
+      "date": "2026-04-03",
+      "notes": "### Version Stamping\n- App now correctly reports its release version instead of always showing v1.0.0"
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-04-03",
+      "notes": "### Build Pipeline\n- Initial release pipeline with PyArmor obfuscation, Ed25519 signing, and OTA manifest generation"
+    }
+  ]
+}
