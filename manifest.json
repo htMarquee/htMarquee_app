@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.18",
-    "released_at": "2026-04-09T19:13:22Z",
-    "changelog": "### Bug Fixes\n- Fixed fresh install crash: WiFi grep pipeline with pipefail on ethernet-only Pi\n- Fixed service startup failure on fresh install: A/B slot directories now optional in ReadWritePaths\n- Fixed deprovision user removal when display process is still running\n- Web installer now correctly runs provision.sh on fresh Pi (was only calling install.sh)\n\n### New\n- Added deprovision.sh for complete htMarquee removal (supports --dry-run and --full)",
+    "version": "1.0.19",
+    "released_at": "2026-04-09T20:03:42Z",
+    "changelog": "### Bug Fixes\n- Fixed login prompt appearing on Hardware tab for Matinee users (tier 403 vs auth 403)\n- Fixed releases.json not including current version in shipped tarball\n- Fixed provision.sh WiFi grep crash with pipefail on ethernet-only Pi\n- Fixed service ReadWritePaths crash on fresh install (no A/B slots)\n\n### Improvements\n- Manifest URL field is now read-only by default with Edit/Lock toggle\n- Backend validates manifest URL before saving (must return valid JSON)\n- Provisioning clears apt and pip caches (~460 MB saved)\n\n### Tests\n- 27 auth tests: setup wizard, login, logout, rate limiting, JWT, HTTPS\n- 74 auth matrix tests: all auth modes x all endpoints x tier gate distinction",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.18/htmarquee-1.0.18.tar.gz",
-    "tarball_sha256": "f4e3c4888ed1cf4b104dcd3f60468a3672f850c5f99ff857868cf6f34dfb903f",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.18/htmarquee-1.0.18.tar.gz.sig",
-    "size_bytes": 6178076,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.19/htmarquee-1.0.19.tar.gz",
+    "tarball_sha256": "7a73c2c2ab31a703bea053a4636154b834b94c5e8b9223eae01e1790f9747387",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.19/htmarquee-1.0.19.tar.gz.sig",
+    "size_bytes": 6185473,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.19",
+      "date": "2026-04-09",
+      "notes": "### Bug Fixes\n- Fixed login prompt appearing on Hardware tab for Matinee users (tier 403 vs auth 403)\n- Fixed releases.json not including current version in shipped tarball\n- Fixed provision.sh WiFi grep crash with pipefail on ethernet-only Pi\n- Fixed service ReadWritePaths crash on fresh install (no A/B slots)\n\n### Improvements\n- Manifest URL field is now read-only by default with Edit/Lock toggle\n- Backend validates manifest URL before saving (must return valid JSON)\n- Provisioning clears apt and pip caches (~460 MB saved)\n\n### Tests\n- 27 auth tests: setup wizard, login, logout, rate limiting, JWT, HTTPS\n- 74 auth matrix tests: all auth modes x all endpoints x tier gate distinction"
+    },
     {
       "version": "1.0.18",
       "date": "2026-04-09",
