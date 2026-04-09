@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.16",
-    "released_at": "2026-04-08T22:49:01Z",
-    "changelog": "### New Features\n- Adjustable banner font size with slider (1.0\u20138.0vh range)\n- Banner font color picker \u2014 choose any color for the header text\n- Public update distribution \u2014 all Pis now pull updates from GitHub\n- Default manifest URL set automatically for new and existing installs\n\n### Improvements\n- TMDB and OMDb API key requirements added to product website\n- Forgejo instance migrated to HTTPS across all CI and documentation\n- Deploy workflow updated with display/ and fonts/ sync reminders\n\n### Infrastructure\n- CI pipeline now publishes obfuscated releases to GitHub (htMarquee/htMarquee_app)\n- Manifest and release notes pushed to GitHub for public access\n- Website stripped to static-only for initial launch (chat widget deferred)",
+    "version": "1.0.17",
+    "released_at": "2026-04-09T15:47:25Z",
+    "changelog": "### New Features\n- Public README with screenshots pushed to GitHub on each release\n- Web install script for curl | bash installs from htmarquee.com\n\n### Bug Fixes\n- Font size and color now survive reboots, service restarts, and system refresh\n- Fixed font settings not passed to SlideshowState constructor\n- Fixed font settings missing from generate_upcoming_playlist startup path\n- Sudoers entry for OTA updates added to install script\n- Service capabilities (CAP_SETUID, CAP_SETGID, CAP_DAC_OVERRIDE) for sudo during OTA\n- Migrated old Forgejo manifest URL to GitHub for existing installations\n\n### Tests\n- 93 new tests: OTA update manager, deploy validation, fonts API, settings pipeline, release notes\n- Deploy validation catches missing sudo capabilities and sudoers entries\n\n### Infrastructure\n- Repo cleanup: non-app files moved to _local/ (gitignored)\n- All Forgejo URLs migrated to HTTPS\n- CI runner updated for HTTPS with SSL verify skip in containers",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.16/htmarquee-1.0.16.tar.gz",
-    "tarball_sha256": "557edc8b797d691f941ac34e6b27eb9a63fbaf510e4404c4af1b0d2864ca1837",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.16/htmarquee-1.0.16.tar.gz.sig",
-    "size_bytes": 39502279,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.17/htmarquee-1.0.17.tar.gz",
+    "tarball_sha256": "a8d887d5a6eb85872f4bccabc45df7af2b423bd11fa0bf784cfe270bb3311302",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.17/htmarquee-1.0.17.tar.gz.sig",
+    "size_bytes": 15321864,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.17",
+      "date": "2026-04-09",
+      "notes": "### New Features\n- Public README with screenshots pushed to GitHub on each release\n- Web install script for curl | bash installs from htmarquee.com\n\n### Bug Fixes\n- Font size and color now survive reboots, service restarts, and system refresh\n- Fixed font settings not passed to SlideshowState constructor\n- Fixed font settings missing from generate_upcoming_playlist startup path\n- Sudoers entry for OTA updates added to install script\n- Service capabilities (CAP_SETUID, CAP_SETGID, CAP_DAC_OVERRIDE) for sudo during OTA\n- Migrated old Forgejo manifest URL to GitHub for existing installations\n\n### Tests\n- 93 new tests: OTA update manager, deploy validation, fonts API, settings pipeline, release notes\n- Deploy validation catches missing sudo capabilities and sudoers entries\n\n### Infrastructure\n- Repo cleanup: non-app files moved to _local/ (gitignored)\n- All Forgejo URLs migrated to HTTPS\n- CI runner updated for HTTPS with SSL verify skip in containers"
+    },
     {
       "version": "1.0.16",
       "date": "2026-04-08",
