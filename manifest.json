@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.17",
-    "released_at": "2026-04-09T16:12:21Z",
-    "changelog": "### New Features\n- Public README with screenshots pushed to GitHub on each release\n- Web install script for curl | bash installs from htmarquee.com\n\n### Bug Fixes\n- Font size and color now survive reboots, service restarts, and system refresh\n- Fixed font settings not passed to SlideshowState constructor\n- Fixed font settings missing from generate_upcoming_playlist startup path\n- Sudoers entry for OTA updates added to install script\n- Service capabilities (CAP_SETUID, CAP_SETGID, CAP_DAC_OVERRIDE) for sudo during OTA\n- Migrated old Forgejo manifest URL to GitHub for existing installations\n\n### Tests\n- 93 new tests: OTA update manager, deploy validation, fonts API, settings pipeline, release notes\n- Deploy validation catches missing sudo capabilities and sudoers entries\n\n### Infrastructure\n- Repo cleanup: non-app files moved to _local/ (gitignored)\n- All Forgejo URLs migrated to HTTPS\n- CI runner updated for HTTPS with SSL verify skip in containers",
+    "version": "1.0.18",
+    "released_at": "2026-04-09T19:13:22Z",
+    "changelog": "### Bug Fixes\n- Fixed fresh install crash: WiFi grep pipeline with pipefail on ethernet-only Pi\n- Fixed service startup failure on fresh install: A/B slot directories now optional in ReadWritePaths\n- Fixed deprovision user removal when display process is still running\n- Web installer now correctly runs provision.sh on fresh Pi (was only calling install.sh)\n\n### New\n- Added deprovision.sh for complete htMarquee removal (supports --dry-run and --full)",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.17/htmarquee-1.0.17.tar.gz",
-    "tarball_sha256": "d8fac3d7aafea371f8d8c684a511418c87cb1b51cbf624e2d5ea4bbaadf038d6",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.17/htmarquee-1.0.17.tar.gz.sig",
-    "size_bytes": 6175566,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.18/htmarquee-1.0.18.tar.gz",
+    "tarball_sha256": "f4e3c4888ed1cf4b104dcd3f60468a3672f850c5f99ff857868cf6f34dfb903f",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.18/htmarquee-1.0.18.tar.gz.sig",
+    "size_bytes": 6178076,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.18",
+      "date": "2026-04-09",
+      "notes": "### Bug Fixes\n- Fixed fresh install crash: WiFi grep pipeline with pipefail on ethernet-only Pi\n- Fixed service startup failure on fresh install: A/B slot directories now optional in ReadWritePaths\n- Fixed deprovision user removal when display process is still running\n- Web installer now correctly runs provision.sh on fresh Pi (was only calling install.sh)\n\n### New\n- Added deprovision.sh for complete htMarquee removal (supports --dry-run and --full)"
+    },
     {
       "version": "1.0.17",
       "date": "2026-04-09",
