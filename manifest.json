@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.22",
-    "released_at": "2026-04-10T13:46:34Z",
-    "changelog": "### Security\n- Expanded PyArmor obfuscation from 32 to 44 modules (Tier 2a)\n- Now protects API clients (TMDB, OMDb, Wikidata, MPV) and all remaining\n  route handlers (system, backup, settings, movies, storage, logs, support)\n- Core auth helpers (bcrypt, JWT, rate limiting) also obfuscated",
+    "version": "1.0.23",
+    "released_at": "2026-04-10T14:06:41Z",
+    "changelog": "### Security\n- Expanded PyArmor obfuscation from 44 to 46 modules (Tier 2b)\n- Now also protects `routes/auth.py` and `routes/license.py`\n- CI now stages files preserving directory structure, so basename\n  collisions between `core/` and `routes/` modules no longer limit\n  which files can be obfuscated",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.22/htmarquee-1.0.22.tar.gz",
-    "tarball_sha256": "1b6652c7fd519a2970abe8853db05974fdd39999beb13e2e4a8f4dd66a2018d8",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.22/htmarquee-1.0.22.tar.gz.sig",
-    "size_bytes": 5981423,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.23/htmarquee-1.0.23.tar.gz",
+    "tarball_sha256": "d2a3a5b863258f811958a0e5638ff570f0950cc5aa77dfaeea98e0f72d70925b",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.23/htmarquee-1.0.23.tar.gz.sig",
+    "size_bytes": 6014741,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.23",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded PyArmor obfuscation from 44 to 46 modules (Tier 2b)\n- Now also protects `routes/auth.py` and `routes/license.py`\n- CI now stages files preserving directory structure, so basename\n  collisions between `core/` and `routes/` modules no longer limit\n  which files can be obfuscated"
+    },
     {
       "version": "1.0.22",
       "date": "2026-04-10",
