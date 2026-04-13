@@ -1,13 +1,13 @@
 {
   "latest": {
     "version": "1.0.27",
-    "released_at": "2026-04-13T18:23:46Z",
+    "released_at": "2026-04-13T18:33:09Z",
     "changelog": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests",
     "min_version": "0.0.1",
     "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.27/htmarquee-1.0.27.tar.gz",
-    "tarball_sha256": "31cdcc44800e40411ab8b34f15761f29b3b2f2c40c55fc5eff8c6ccdde3ff8a1",
+    "tarball_sha256": "cd2788286dbf2af7bb3dd3ad43ac93a7e18c008177e7bb8cd7a549b0dc4b97cf",
     "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.27/htmarquee-1.0.27.tar.gz.sig",
-    "size_bytes": 6537919,
+    "size_bytes": 6543638,
     "requires_restart": true
   },
   "releases": [
