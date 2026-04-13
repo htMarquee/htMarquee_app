@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.27",
-    "released_at": "2026-04-13T18:44:32Z",
+    "version": "1.0.28",
+    "released_at": "2026-04-13T18:52:35Z",
     "changelog": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.27/htmarquee-1.0.27.tar.gz",
-    "tarball_sha256": "ac519ea8ee7af645dd775d4c664578e38202b200032e1578eded1fb053691337",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.27/htmarquee-1.0.27.tar.gz.sig",
-    "size_bytes": 6542890,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.28/htmarquee-1.0.28.tar.gz",
+    "tarball_sha256": "802f45d4c99fbb05d2e5801b70947a5327c971187553145009d2a3dac1238ae9",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.28/htmarquee-1.0.28.tar.gz.sig",
+    "size_bytes": 6537278,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.28",
+      "date": "2026-04-13",
+      "notes": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests"
+    },
     {
       "version": "1.0.27",
       "date": "2026-04-13",
