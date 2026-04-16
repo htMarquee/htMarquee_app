@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.32",
-    "released_at": "2026-04-16T21:39:04Z",
-    "changelog": "### Fixes\n- Fix banner text overflowing when Plex or Jellyfin playback starts \u2014\n  the banner font size is now recalculated to fit the integration's\n  banner text and font within the display width\n- Fix webhook URL copy button failing on HTTP connections \u2014 added\n  clipboard fallback for insecure origins where navigator.clipboard\n  is unavailable\n- Fix ACTIVE banner hardcoded to \"Now Playing\" instead of using the\n  per-integration banner text from settings\n\n### Improvements\n- Integration banner font is now sent to the display when playback\n  starts, and restored to the idle font when playback stops",
+    "version": "1.0.33",
+    "released_at": "2026-04-16T23:23:12Z",
+    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters only playing once before reverting to static \u2014\n  movies without trailers were using the pre-trailer duration (6s)\n  instead of the playlist display duration (default 30s), leaving\n  too little time for the animated poster loop-fade cycle",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.32/htmarquee-1.0.32.tar.gz",
-    "tarball_sha256": "3a54bd4dbd6e3432e5f83b7e2ac1ce0fca878c11d55d0c3397a2ccb47b2cb671",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.32/htmarquee-1.0.32.tar.gz.sig",
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.33/htmarquee-1.0.33.tar.gz",
+    "tarball_sha256": "b7477ba8a1f8638ddd115911d11338fc86f404f9155ca9e64eb2cde3a347fc03",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.33/htmarquee-1.0.33.tar.gz.sig",
     "size_bytes": 6536848,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.33",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters only playing once before reverting to static \u2014\n  movies without trailers were using the pre-trailer duration (6s)\n  instead of the playlist display duration (default 30s), leaving\n  too little time for the animated poster loop-fade cycle"
+    },
     {
       "version": "1.0.32",
       "date": "2026-04-16",
