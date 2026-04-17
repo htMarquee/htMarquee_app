@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.34",
-    "released_at": "2026-04-16T23:36:03Z",
-    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  the display was stopping the animated poster video at the start of\n  the TRANSITION phase, showing the static poster for 2 seconds before\n  the next movie. Now keeps the animated poster playing through the\n  transition until the next movie loads",
+    "version": "1.0.35",
+    "released_at": "2026-04-17T13:18:11Z",
+    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static\n  posters. Transitions (crossfade, wipe, dissolve) apply correctly\n  when entering and leaving an animated poster, video loops seamlessly\n  without fade-to-black gaps, and poster display timing is consistent",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.34/htmarquee-1.0.34.tar.gz",
-    "tarball_sha256": "3d838e48416d40bd723710cf730ec79c4f68249b6a5be9598d1a318bce859e6f",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.34/htmarquee-1.0.34.tar.gz.sig",
-    "size_bytes": 6532238,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.35/htmarquee-1.0.35.tar.gz",
+    "tarball_sha256": "9dd1a612bd7141443ec62def6e894c2066e5877fbf8f468fe6d6171669c98beb",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.35/htmarquee-1.0.35.tar.gz.sig",
+    "size_bytes": 6543112,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.35",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static\n  posters. Transitions (crossfade, wipe, dissolve) apply correctly\n  when entering and leaving an animated poster, video loops seamlessly\n  without fade-to-black gaps, and poster display timing is consistent"
+    },
     {
       "version": "1.0.34",
       "date": "2026-04-16",
