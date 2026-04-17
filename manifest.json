@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.35",
-    "released_at": "2026-04-17T13:18:11Z",
-    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static\n  posters. Transitions (crossfade, wipe, dissolve) apply correctly\n  when entering and leaving an animated poster, video loops seamlessly\n  without fade-to-black gaps, and poster display timing is consistent",
+    "version": "1.0.36",
+    "released_at": "2026-04-17T13:30:43Z",
+    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Revert animated poster display changes from v1.0.33-v1.0.35 \u2014\n  restores original animated poster rendering behavior",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.35/htmarquee-1.0.35.tar.gz",
-    "tarball_sha256": "9dd1a612bd7141443ec62def6e894c2066e5877fbf8f468fe6d6171669c98beb",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.35/htmarquee-1.0.35.tar.gz.sig",
-    "size_bytes": 6543112,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.36/htmarquee-1.0.36.tar.gz",
+    "tarball_sha256": "3b24fe5f83031b5c0243b4e983523b788f6e614d35ba24ca19dc62ae0d3ddf87",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.36/htmarquee-1.0.36.tar.gz.sig",
+    "size_bytes": 6535317,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.36",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Revert animated poster display changes from v1.0.33-v1.0.35 \u2014\n  restores original animated poster rendering behavior"
+    },
     {
       "version": "1.0.35",
       "date": "2026-04-17",
