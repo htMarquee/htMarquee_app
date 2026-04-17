@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.40",
-    "released_at": "2026-04-17T21:05:16Z",
-    "changelog": "### New Feature: Live CEC TV Status Monitor\n- CEC TV power status now updates automatically via a background\n  monitor \u2014 no more stale \"TV is Off\" after sending power commands\n- After any CEC command, status polls every 1 second for 10 seconds\n  to catch the TV's response, then resumes normal 30-second polling\n- Dashboard TV Control panel now shows:\n  - Transition states (\"TV Turning On...\" / \"TV Turning Off...\") with\n    a pulsing amber indicator\n  - TV name and HDMI port (e.g. \"SAMSUNG \u00b7 HDMI 2\")\n  - Active source indicator (whether the Pi is the current input)\n- CEC status changes are broadcast via WebSocket \u2014 the dashboard\n  updates live without manual refresh",
+    "version": "1.0.41",
+    "released_at": "2026-04-17T21:20:51Z",
+    "changelog": "### Improvements\n- CEC status updates faster after sending power commands \u2014 fast\n  polling window extended from 10s to 30s to cover slow TVs, and\n  active source query is skipped during fast polling to halve\n  per-poll latency",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.40/htmarquee-1.0.40.tar.gz",
-    "tarball_sha256": "7f77d5d1e5100ea0027bcefe469e35ce340029b8a6bc6bfe24be421f2250cbc6",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.40/htmarquee-1.0.40.tar.gz.sig",
-    "size_bytes": 6550351,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.41/htmarquee-1.0.41.tar.gz",
+    "tarball_sha256": "979756be0310598d2193f6a129768749e68cc41cfeda79df2e98a038ad489e54",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.41/htmarquee-1.0.41.tar.gz.sig",
+    "size_bytes": 6551870,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.41",
+      "date": "2026-04-17",
+      "notes": "### Improvements\n- CEC status updates faster after sending power commands \u2014 fast\n  polling window extended from 10s to 30s to cover slow TVs, and\n  active source query is skipped during fast polling to halve\n  per-poll latency"
+    },
     {
       "version": "1.0.40",
       "date": "2026-04-17",
