@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.38",
-    "released_at": "2026-04-17T14:00:47Z",
-    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of\n  the display cycle before the next movie transitions in",
+    "version": "1.0.39",
+    "released_at": "2026-04-17T14:29:46Z",
+    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of\n  the display cycle before the next movie transitions in\n- Poster display time minimum lowered from 5 to 3 seconds",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.38/htmarquee-1.0.38.tar.gz",
-    "tarball_sha256": "6ec7b8b2843e62aba0c493068a839ea72e0925edb4d0f2e1b49c039104d2289e",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.38/htmarquee-1.0.38.tar.gz.sig",
-    "size_bytes": 6538204,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.39/htmarquee-1.0.39.tar.gz",
+    "tarball_sha256": "fa60e0faa1df7c8fa61fa6d848c4a102287143e4741f06d98efcbf56ac495535",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.39/htmarquee-1.0.39.tar.gz.sig",
+    "size_bytes": 6537953,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.39",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of\n  the display cycle before the next movie transitions in\n- Poster display time minimum lowered from 5 to 3 seconds"
+    },
     {
       "version": "1.0.38",
       "date": "2026-04-17",
