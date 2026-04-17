@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.36",
-    "released_at": "2026-04-17T13:30:43Z",
-    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Revert animated poster display changes from v1.0.33-v1.0.35 \u2014\n  restores original animated poster rendering behavior",
+    "version": "1.0.37",
+    "released_at": "2026-04-17T13:57:15Z",
+    "changelog": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.36/htmarquee-1.0.36.tar.gz",
-    "tarball_sha256": "3b24fe5f83031b5c0243b4e983523b788f6e614d35ba24ca19dc62ae0d3ddf87",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.36/htmarquee-1.0.36.tar.gz.sig",
-    "size_bytes": 6535317,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.37/htmarquee-1.0.37.tar.gz",
+    "tarball_sha256": "3d8ac1c53c681f376701ef0956f57f29ec17b48484b579347882e0b656051b01",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.37/htmarquee-1.0.37.tar.gz.sig",
+    "size_bytes": 6535844,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.37",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads"
+    },
     {
       "version": "1.0.36",
       "date": "2026-04-17",
