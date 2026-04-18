@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.43",
-    "released_at": "2026-04-18T21:06:06Z",
-    "changelog": "### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster",
+    "version": "1.0.44",
+    "released_at": "2026-04-18T23:35:23Z",
+    "changelog": "### New\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.43/htmarquee-1.0.43.tar.gz",
-    "tarball_sha256": "48f865200645f2e07376c9893ac1050ef42109ae9abbf6d5ae567be947bfc0bb",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.43/htmarquee-1.0.43.tar.gz.sig",
-    "size_bytes": 6551485,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.44/htmarquee-1.0.44.tar.gz",
+    "tarball_sha256": "6ede67988e61ae465ddcff0d280f07139f3bb8714d701539a4f401e168d42766",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.44/htmarquee-1.0.44.tar.gz.sig",
+    "size_bytes": 6547140,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.44",
+      "date": "2026-04-18",
+      "notes": "### New\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster"
+    },
     {
       "version": "1.0.43",
       "date": "2026-04-18",
