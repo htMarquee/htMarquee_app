@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.44",
-    "released_at": "2026-04-18T23:35:23Z",
-    "changelog": "### New\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster",
+    "version": "1.0.45",
+    "released_at": "2026-04-20T18:12:23Z",
+    "changelog": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes\n  that gate webhook processing and require server IP/URL to be set\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.44/htmarquee-1.0.44.tar.gz",
-    "tarball_sha256": "6ede67988e61ae465ddcff0d280f07139f3bb8714d701539a4f401e168d42766",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.44/htmarquee-1.0.44.tar.gz.sig",
-    "size_bytes": 6547140,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.45/htmarquee-1.0.45.tar.gz",
+    "tarball_sha256": "f7d300b10e15824970a364531120527c6c707ca1cb2b523a27cae0b03b53bc18",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.45/htmarquee-1.0.45.tar.gz.sig",
+    "size_bytes": 6552506,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.45",
+      "date": "2026-04-20",
+      "notes": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes\n  that gate webhook processing and require server IP/URL to be set\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster"
+    },
     {
       "version": "1.0.44",
       "date": "2026-04-18",
