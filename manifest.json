@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.45",
-    "released_at": "2026-04-20T18:12:23Z",
-    "changelog": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes\n  that gate webhook processing and require server IP/URL to be set\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster",
+    "version": "1.0.46",
+    "released_at": "2026-04-23T13:33:48Z",
+    "changelog": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and\n  trailer so the display has working content immediately, even\n  before a TMDB API key is set\n- Default interstitial slide that plays every 10 posters \u2014 always\n  enabled and cannot be disabled or deleted\n- Plex and Jellyfin playback banners can now be independently\n  shown/hidden and have their own font color pickers\n- Playback banner text is auto-fit to keep long strings on-screen\n\n### Fixes\n- Theater Badges \"Generate\" speaker layout button no longer\n  triggers an accidental settings save, fixing sporadic \"database\n  is locked\" errors on first attempt\n- Enabling Plex or Jellyfin immediately after entering a server\n  URL now works \u2014 previously the enable toggle was validated\n  before the URL was persisted, returning a misleading error\n- Adding a TMDB API key on a fresh install correctly triggers the\n  initial cache seed; the shipped demo movie no longer counts as\n  existing content and blocks the seed\n- Settings PATCH path for webhook callers now returns all banner\n  fields consistently",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.45/htmarquee-1.0.45.tar.gz",
-    "tarball_sha256": "f7d300b10e15824970a364531120527c6c707ca1cb2b523a27cae0b03b53bc18",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.45/htmarquee-1.0.45.tar.gz.sig",
-    "size_bytes": 6552506,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.46/htmarquee-1.0.46.tar.gz",
+    "tarball_sha256": "8ef71d38c0c7b44b4f3055f5cf8a057304a24fd5a17e6e0db2bc3e01dabbe7c4",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.46/htmarquee-1.0.46.tar.gz.sig",
+    "size_bytes": 26350348,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.46",
+      "date": "2026-04-23",
+      "notes": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and\n  trailer so the display has working content immediately, even\n  before a TMDB API key is set\n- Default interstitial slide that plays every 10 posters \u2014 always\n  enabled and cannot be disabled or deleted\n- Plex and Jellyfin playback banners can now be independently\n  shown/hidden and have their own font color pickers\n- Playback banner text is auto-fit to keep long strings on-screen\n\n### Fixes\n- Theater Badges \"Generate\" speaker layout button no longer\n  triggers an accidental settings save, fixing sporadic \"database\n  is locked\" errors on first attempt\n- Enabling Plex or Jellyfin immediately after entering a server\n  URL now works \u2014 previously the enable toggle was validated\n  before the URL was persisted, returning a misleading error\n- Adding a TMDB API key on a fresh install correctly triggers the\n  initial cache seed; the shipped demo movie no longer counts as\n  existing content and blocks the seed\n- Settings PATCH path for webhook callers now returns all banner\n  fields consistently"
+    },
     {
       "version": "1.0.45",
       "date": "2026-04-20",
