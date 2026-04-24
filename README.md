@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="readme-assets/display-4k.png" alt="htMarquee Display" width="300">
-</p>
-
 <h1 align="center">htMarquee</h1>
 <p align="center">
   <strong>Smart movie poster display for home theater lobbies</strong><br>
@@ -16,13 +12,16 @@
 
 ---
 
+> **TODO — add fresh screenshots.** The previous README included stale
+> shots of an earlier build; they've been removed pending new images of
+> the current display and dashboard. Target shots: 4K portrait display,
+> landscape display with movie info overlay, and the web dashboard.
+
+---
+
 ## What is htMarquee?
 
 htMarquee transforms a Raspberry Pi 5 and a 4K TV into a theater-quality movie poster display. It automatically cycles through movie posters with trailers, syncs with your Plex or Jellyfin server during playback, and provides a web-based control panel accessible from any device.
-
-<p align="center">
-  <img src="readme-assets/display-landscape.png" alt="htMarquee Display with movie info" width="700">
-</p>
 
 ### Key Features
 
@@ -36,10 +35,6 @@ htMarquee transforms a Raspberry Pi 5 and a 4K TV into a theater-quality movie p
 - **HDMI-CEC** — auto power on/off your TV on schedule
 - **Custom slides** — insert your own images/videos between movies
 - **OTA updates** — one-click updates from the app
-
-<p align="center">
-  <img src="readme-assets/dashboard.png" alt="htMarquee Web Dashboard" width="700">
-</p>
 
 ## Tiers
 
