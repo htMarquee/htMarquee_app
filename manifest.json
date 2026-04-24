@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.48",
-    "released_at": "2026-04-24T20:18:18Z",
-    "changelog": "### Fixes\n- Fresh installs and legacy installs now set up the A/B slot layout\n  correctly, so in-app \"Install update\" no longer fails with\n  \"Failed to configure A/B slot mode. Check logs for details.\"\n- If you hit that error on v1.0.47 or earlier, re-run the standard\n  install command to recover in place \u2014 it will promote your plain\n  install to the slot layout and set the missing sudo rules:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`\n\n  After it finishes, in-app updates will work going forward.",
+    "version": "1.0.49",
+    "released_at": "2026-04-24T20:34:16Z",
+    "changelog": "### Fixes\n- A/B slot setup now pre-creates symlinks for every shared data item \u2014\n  `cache_metadata.db`, `.env`, `license.json`, `backups/` \u2014 even when\n  the item doesn't exist yet at install time. Previously the SQLite\n  database and any later-uploaded license file landed inside the active\n  slot as regular files instead of in the shared data directory, so the\n  first OTA swap would activate the inactive slot with no DB / no\n  license and the app would look like it had lost every setting,\n  cached movie, and the user's PIN.\n- Fresh v1.0.49 installs get the correct layout automatically. Existing\n  installs that already have data in slot A will have it migrated on\n  the next install or update; no manual action required if you\n  re-deprovision and reinstall.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.48/htmarquee-1.0.48.tar.gz",
-    "tarball_sha256": "0cfae9d48011fc76095d75a91270fc38c8a98d3c62a7953ff7b1ddc5d7a99602",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.48/htmarquee-1.0.48.tar.gz.sig",
-    "size_bytes": 26366731,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.49/htmarquee-1.0.49.tar.gz",
+    "tarball_sha256": "9c6e9c98ec91dc43c42171b9a7383b38ba3abaead1d71df1759b6815ce582d87",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.49/htmarquee-1.0.49.tar.gz.sig",
+    "size_bytes": 26367551,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.49",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- A/B slot setup now pre-creates symlinks for every shared data item \u2014\n  `cache_metadata.db`, `.env`, `license.json`, `backups/` \u2014 even when\n  the item doesn't exist yet at install time. Previously the SQLite\n  database and any later-uploaded license file landed inside the active\n  slot as regular files instead of in the shared data directory, so the\n  first OTA swap would activate the inactive slot with no DB / no\n  license and the app would look like it had lost every setting,\n  cached movie, and the user's PIN.\n- Fresh v1.0.49 installs get the correct layout automatically. Existing\n  installs that already have data in slot A will have it migrated on\n  the next install or update; no manual action required if you\n  re-deprovision and reinstall."
+    },
     {
       "version": "1.0.48",
       "date": "2026-04-24",
