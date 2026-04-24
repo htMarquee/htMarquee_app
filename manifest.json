@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.49",
-    "released_at": "2026-04-24T20:34:16Z",
-    "changelog": "### Fixes\n- A/B slot setup now pre-creates symlinks for every shared data item \u2014\n  `cache_metadata.db`, `.env`, `license.json`, `backups/` \u2014 even when\n  the item doesn't exist yet at install time. Previously the SQLite\n  database and any later-uploaded license file landed inside the active\n  slot as regular files instead of in the shared data directory, so the\n  first OTA swap would activate the inactive slot with no DB / no\n  license and the app would look like it had lost every setting,\n  cached movie, and the user's PIN.\n- Fresh v1.0.49 installs get the correct layout automatically. Existing\n  installs that already have data in slot A will have it migrated on\n  the next install or update; no manual action required if you\n  re-deprovision and reinstall.",
+    "version": "1.0.50",
+    "released_at": "2026-04-24T21:07:58Z",
+    "changelog": "### Fixes\n- Pre-create `assets/`, `logs/`, and `backups/` inside the shared\n  data directory during install (and on first OTA) so their symlinks\n  in the active slot resolve to real directories. Previously `backups/`\n  was a dangling symlink until the first backup was created, which\n  caused `Path.mkdir(exist_ok=True)` in the backup code path to raise\n  `FileExistsError` \u2014 the symlink existed but its target didn't, so\n  `is_dir()` returned False.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.49/htmarquee-1.0.49.tar.gz",
-    "tarball_sha256": "9c6e9c98ec91dc43c42171b9a7383b38ba3abaead1d71df1759b6815ce582d87",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.49/htmarquee-1.0.49.tar.gz.sig",
-    "size_bytes": 26367551,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.50/htmarquee-1.0.50.tar.gz",
+    "tarball_sha256": "d367c9137dcf370d83af5a9b3232ce189ae5252bbfaa4bb9b309d6d12f697dd5",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.50/htmarquee-1.0.50.tar.gz.sig",
+    "size_bytes": 26370691,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.50",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- Pre-create `assets/`, `logs/`, and `backups/` inside the shared\n  data directory during install (and on first OTA) so their symlinks\n  in the active slot resolve to real directories. Previously `backups/`\n  was a dangling symlink until the first backup was created, which\n  caused `Path.mkdir(exist_ok=True)` in the backup code path to raise\n  `FileExistsError` \u2014 the symlink existed but its target didn't, so\n  `is_dir()` returned False."
+    },
     {
       "version": "1.0.49",
       "date": "2026-04-24",
