@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.47",
-    "released_at": "2026-04-24T19:29:31Z",
-    "changelog": "### Fixes\n- Toggling \"Enable HTTPS\" no longer locks you out. The new protocol is\n  persisted but doesn't take effect until a restart, and the save action\n  now prompts \"Restart now?\" and reloads the page on whichever protocol\n  the server comes back up on.\n- Switching auth mode (PIN \u2194 Password) now prompts for a fresh\n  credential inline before you save. Previously the old PIN/password\n  hash was silently reused under the new mode, leaving an unusable\n  account.\n- Changing auth mode signs you out and rotates the session secret, so\n  any open tabs or stale cookies can't keep acting under the old\n  credential.\n- Switching auth mode to \"None\" shows a security confirmation dialog\n  before stripping authentication.\n- Changing the device IP, hostname, DHCP mode, or NTP server now offers\n  an immediate \"Restart now?\" button when the change can only apply on\n  service restart. No more hunting for the Restart button under\n  Maintenance.\n- Smoke tests no longer leave the display paused. The internal pause\n  toggle is now exercised twice so the pre-existing state is preserved.",
+    "version": "1.0.48",
+    "released_at": "2026-04-24T20:18:18Z",
+    "changelog": "### Fixes\n- Fresh installs and legacy installs now set up the A/B slot layout\n  correctly, so in-app \"Install update\" no longer fails with\n  \"Failed to configure A/B slot mode. Check logs for details.\"\n- If you hit that error on v1.0.47 or earlier, re-run the standard\n  install command to recover in place \u2014 it will promote your plain\n  install to the slot layout and set the missing sudo rules:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`\n\n  After it finishes, in-app updates will work going forward.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.47/htmarquee-1.0.47.tar.gz",
-    "tarball_sha256": "ff61e2f356cc6153635a294fe59daec7c5166926098212008f4a27b7da4fa3e1",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.47/htmarquee-1.0.47.tar.gz.sig",
-    "size_bytes": 26366649,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.48/htmarquee-1.0.48.tar.gz",
+    "tarball_sha256": "0cfae9d48011fc76095d75a91270fc38c8a98d3c62a7953ff7b1ddc5d7a99602",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.48/htmarquee-1.0.48.tar.gz.sig",
+    "size_bytes": 26366731,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.48",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- Fresh installs and legacy installs now set up the A/B slot layout\n  correctly, so in-app \"Install update\" no longer fails with\n  \"Failed to configure A/B slot mode. Check logs for details.\"\n- If you hit that error on v1.0.47 or earlier, re-run the standard\n  install command to recover in place \u2014 it will promote your plain\n  install to the slot layout and set the missing sudo rules:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`\n\n  After it finishes, in-app updates will work going forward."
+    },
     {
       "version": "1.0.47",
       "date": "2026-04-24",
