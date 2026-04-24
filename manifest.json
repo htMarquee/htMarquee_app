@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.46",
-    "released_at": "2026-04-23T13:33:48Z",
-    "changelog": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and\n  trailer so the display has working content immediately, even\n  before a TMDB API key is set\n- Default interstitial slide that plays every 10 posters \u2014 always\n  enabled and cannot be disabled or deleted\n- Plex and Jellyfin playback banners can now be independently\n  shown/hidden and have their own font color pickers\n- Playback banner text is auto-fit to keep long strings on-screen\n\n### Fixes\n- Theater Badges \"Generate\" speaker layout button no longer\n  triggers an accidental settings save, fixing sporadic \"database\n  is locked\" errors on first attempt\n- Enabling Plex or Jellyfin immediately after entering a server\n  URL now works \u2014 previously the enable toggle was validated\n  before the URL was persisted, returning a misleading error\n- Adding a TMDB API key on a fresh install correctly triggers the\n  initial cache seed; the shipped demo movie no longer counts as\n  existing content and blocks the seed\n- Settings PATCH path for webhook callers now returns all banner\n  fields consistently",
+    "version": "1.0.47",
+    "released_at": "2026-04-24T19:29:31Z",
+    "changelog": "### Fixes\n- Toggling \"Enable HTTPS\" no longer locks you out. The new protocol is\n  persisted but doesn't take effect until a restart, and the save action\n  now prompts \"Restart now?\" and reloads the page on whichever protocol\n  the server comes back up on.\n- Switching auth mode (PIN \u2194 Password) now prompts for a fresh\n  credential inline before you save. Previously the old PIN/password\n  hash was silently reused under the new mode, leaving an unusable\n  account.\n- Changing auth mode signs you out and rotates the session secret, so\n  any open tabs or stale cookies can't keep acting under the old\n  credential.\n- Switching auth mode to \"None\" shows a security confirmation dialog\n  before stripping authentication.\n- Changing the device IP, hostname, DHCP mode, or NTP server now offers\n  an immediate \"Restart now?\" button when the change can only apply on\n  service restart. No more hunting for the Restart button under\n  Maintenance.\n- Smoke tests no longer leave the display paused. The internal pause\n  toggle is now exercised twice so the pre-existing state is preserved.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.46/htmarquee-1.0.46.tar.gz",
-    "tarball_sha256": "8ef71d38c0c7b44b4f3055f5cf8a057304a24fd5a17e6e0db2bc3e01dabbe7c4",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.46/htmarquee-1.0.46.tar.gz.sig",
-    "size_bytes": 26350348,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.47/htmarquee-1.0.47.tar.gz",
+    "tarball_sha256": "ff61e2f356cc6153635a294fe59daec7c5166926098212008f4a27b7da4fa3e1",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.47/htmarquee-1.0.47.tar.gz.sig",
+    "size_bytes": 26366649,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.47",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- Toggling \"Enable HTTPS\" no longer locks you out. The new protocol is\n  persisted but doesn't take effect until a restart, and the save action\n  now prompts \"Restart now?\" and reloads the page on whichever protocol\n  the server comes back up on.\n- Switching auth mode (PIN \u2194 Password) now prompts for a fresh\n  credential inline before you save. Previously the old PIN/password\n  hash was silently reused under the new mode, leaving an unusable\n  account.\n- Changing auth mode signs you out and rotates the session secret, so\n  any open tabs or stale cookies can't keep acting under the old\n  credential.\n- Switching auth mode to \"None\" shows a security confirmation dialog\n  before stripping authentication.\n- Changing the device IP, hostname, DHCP mode, or NTP server now offers\n  an immediate \"Restart now?\" button when the change can only apply on\n  service restart. No more hunting for the Restart button under\n  Maintenance.\n- Smoke tests no longer leave the display paused. The internal pause\n  toggle is now exercised twice so the pre-existing state is preserved."
+    },
     {
       "version": "1.0.46",
       "date": "2026-04-23",
