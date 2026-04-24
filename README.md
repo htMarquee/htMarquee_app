@@ -12,13 +12,6 @@
 
 ---
 
-> **TODO — add fresh screenshots.** The previous README included stale
-> shots of an earlier build; they've been removed pending new images of
-> the current display and dashboard. Target shots: 4K portrait display,
-> landscape display with movie info overlay, and the web dashboard.
-
----
-
 ## What is htMarquee?
 
 htMarquee transforms a Raspberry Pi 5 and a 4K TV into a theater-quality movie poster display. It automatically cycles through movie posters with trailers, syncs with your Plex or Jellyfin server during playback, and provides a web-based control panel accessible from any device.
