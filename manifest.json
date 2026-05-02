@@ -1,245 +1,250 @@
 {
   "latest": {
-    "version": "1.0.55",
-    "released_at": "2026-04-29T21:50:22Z",
-    "changelog": "### Fixes\n\n- **Backup: WAL-aware DB snapshot.** Backups created by v1.0.54 and\n  earlier captured only the `cache_metadata.db` file, missing any writes\n  that lived in the SQLite write-ahead log (`.db-wal`). The result was a\n  silently-inconsistent backup whose row counts diverged from the\n  manifest by however many writes had happened since the last\n  checkpoint. On a forensic snapshot taken Apr 29, the backup's `.db`\n  showed 41 cached movies, 0 blocked movies, and 114 list-cache rows\n  while the manifest (which queries the live DB and sees the WAL)\n  reported 40 / 1 / 115 \u2014 i.e. one drift in each direction depending on\n  whether the change was an INSERT, DELETE, or UPDATE that hadn't\n  checkpointed yet.\n\n  v1.0.55 switches to SQLite's online-backup API (`Connection.backup()`),\n  which produces an atomic snapshot regardless of WAL state. Backup\n  files now match the manifest exactly. No format change \u2014 older\n  backups still restore normally.\n\n- **Backup: include `license.json`.** The Pi's signed Premiere license\n  lives at `/opt/htmarquee-data/license.json`. Previous backups did not\n  capture it, so restoring on a fresh Pi (or after a factory reset)\n  reverted to Matinee tier on next startup. The license file is now\n  included as `htmarquee-backup/license.json`. The restore endpoint\n  picks it up automatically and writes it back to the production data\n  path. Older backups (without the license file) restore as before\n  with no license \u2014 same behavior as v1.0.54.\n\n### Tests\n\n- Two new regression tests in `tests/test_backup_api.py`:\n  `test_backup_db_captures_wal_writes` (verifies the SQLite-backup-API\n  path captures all 150 of 150 rows when 50 are pinned to the WAL),\n  `test_backup_includes_license_json` (verifies the license is in the\n  zip).\n- Three test fixtures updated to seed real SQLite DBs (was\n  `b\"\u0000\" * 100` placeholder bytes that the new SQLite-backup-API\n  rejects with \"file is not a database\"). Files touched:\n  `tests/test_backup_api.py`, `tests/test_slides.py`,\n  `tests/test_fuzz.py`.",
+    "version": "1.0.56",
+    "released_at": "2026-05-02T13:09:27Z",
+    "changelog": "### Fixes\n\n- **Backups now capture the database accurately.** Previously a small\n  number of recent changes could be missing from a backup, causing\n  subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi\n  keeps your Premiere tier intact without re-uploading the license.\n- **Trailer black-bar removal handles longer trailers reliably.**\n  Previously trailers around three minutes or more could time out during\n  analysis and skip the auto-crop step.\n- **Variable-aspect trailers preserve their full image.** Modern trailers\n  that shift aspect ratio mid-clip (IMAX expansion, anamorphic sequences)\n  no longer get over-cropped \u2014 when the aspect varies, the crop is\n  skipped or kept conservative so nothing important gets cut off.\n- **Animated movie posters no longer flash to static before the next\n  movie.** Previously, when an animated poster cycled to the next movie,\n  the marquee briefly showed the static version of the same poster\n  before the transition. The animated frame now holds smoothly through\n  the crossfade.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.55/htmarquee-1.0.55.tar.gz",
-    "tarball_sha256": "8db4871446e53ef989f7a07135b776302284e209eb5d6ecb37603632cc9f024c",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.55/htmarquee-1.0.55.tar.gz.sig",
-    "size_bytes": 26370758,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.56/htmarquee-1.0.56.tar.gz",
+    "tarball_sha256": "1d6fe90e8a5252a038dc4e83b68625ab42b1a74349b887167ad3c19fe83f721c",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.56/htmarquee-1.0.56.tar.gz.sig",
+    "size_bytes": 26376350,
     "requires_restart": true
   },
   "releases": [
     {
+      "version": "1.0.56",
+      "date": "2026-05-02",
+      "notes": "### Fixes\n\n- **Backups now capture the database accurately.** Previously a small\n  number of recent changes could be missing from a backup, causing\n  subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi\n  keeps your Premiere tier intact without re-uploading the license.\n- **Trailer black-bar removal handles longer trailers reliably.**\n  Previously trailers around three minutes or more could time out during\n  analysis and skip the auto-crop step.\n- **Variable-aspect trailers preserve their full image.** Modern trailers\n  that shift aspect ratio mid-clip (IMAX expansion, anamorphic sequences)\n  no longer get over-cropped \u2014 when the aspect varies, the crop is\n  skipped or kept conservative so nothing important gets cut off.\n- **Animated movie posters no longer flash to static before the next\n  movie.** Previously, when an animated poster cycled to the next movie,\n  the marquee briefly showed the static version of the same poster\n  before the transition. The animated frame now holds smoothly through\n  the crossfade."
+    },
+    {
       "version": "1.0.55",
       "date": "2026-04-29",
-      "notes": "### Fixes\n\n- **Backup: WAL-aware DB snapshot.** Backups created by v1.0.54 and\n  earlier captured only the `cache_metadata.db` file, missing any writes\n  that lived in the SQLite write-ahead log (`.db-wal`). The result was a\n  silently-inconsistent backup whose row counts diverged from the\n  manifest by however many writes had happened since the last\n  checkpoint. On a forensic snapshot taken Apr 29, the backup's `.db`\n  showed 41 cached movies, 0 blocked movies, and 114 list-cache rows\n  while the manifest (which queries the live DB and sees the WAL)\n  reported 40 / 1 / 115 \u2014 i.e. one drift in each direction depending on\n  whether the change was an INSERT, DELETE, or UPDATE that hadn't\n  checkpointed yet.\n\n  v1.0.55 switches to SQLite's online-backup API (`Connection.backup()`),\n  which produces an atomic snapshot regardless of WAL state. Backup\n  files now match the manifest exactly. No format change \u2014 older\n  backups still restore normally.\n\n- **Backup: include `license.json`.** The Pi's signed Premiere license\n  lives at `/opt/htmarquee-data/license.json`. Previous backups did not\n  capture it, so restoring on a fresh Pi (or after a factory reset)\n  reverted to Matinee tier on next startup. The license file is now\n  included as `htmarquee-backup/license.json`. The restore endpoint\n  picks it up automatically and writes it back to the production data\n  path. Older backups (without the license file) restore as before\n  with no license \u2014 same behavior as v1.0.54.\n\n### Tests\n\n- Two new regression tests in `tests/test_backup_api.py`:\n  `test_backup_db_captures_wal_writes` (verifies the SQLite-backup-API\n  path captures all 150 of 150 rows when 50 are pinned to the WAL),\n  `test_backup_includes_license_json` (verifies the license is in the\n  zip).\n- Three test fixtures updated to seed real SQLite DBs (was\n  `b\"\u0000\" * 100` placeholder bytes that the new SQLite-backup-API\n  rejects with \"file is not a database\"). Files touched:\n  `tests/test_backup_api.py`, `tests/test_slides.py`,\n  `tests/test_fuzz.py`."
+      "notes": "### Fixes\n- **Backups now capture the database accurately.** Previously a small number of recent changes could be missing from a backup, causing subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi keeps your Premiere tier intact without re-uploading the license."
     },
     {
       "version": "1.0.53",
       "date": "2026-04-29",
-      "notes": "### Fixes & features\n\n- **Self-healing posters.** When a movie's primary poster file is missing\n  on disk (most often because a previous TMDB download silently failed\n  during caching), the slideshow now:\n  1. **Detects** the broken poster *before* broadcasting it to the\n     display \u2014 never shows a blank frame.\n  2. **Skips** to the next movie in the playlist for this cycle.\n  3. **Queues a background re-download** from the TMDB CDN at all four\n     sizes (`original`/`w780`/`w500`/`w342`). Capped at 2 concurrent\n     downloads so it doesn't slam the API.\n  4. **Picks up** the repaired poster on the next slideshow rotation.\n  If a movie has alternative posters but the primary is broken, the\n  alt is used directly (no skip needed).\n\n- **Startup health sweep.** On every server start, htMarquee scans every\n  movie marked as cached and queues a repair for any whose primary\n  file is missing. Catches drift accumulated since the last boot.\n\n- **Silent-cache-failure log bumped.** `quick_cache()` previously logged\n  primary-poster download failures at DEBUG level, which meant ~20% of\n  cached movies could end up flagged as `poster_cached=1` with no\n  primary file on disk and no surface signal. Now logs at WARNING with\n  the tmdb_id, poster_path, and exception so the failure is visible\n  in `/api/logs` as it happens \u2014 no more \"find out 6 weeks later when\n  Greenland 2 stops appearing.\"\n\n### Backend\n\n- New `backend/services/poster_health.py` module with three pieces:\n  - Pure health-check helpers (`is_poster_url_serveable`,\n    `is_movie_poster_healthy`, `find_serveable_poster_url`).\n  - `PosterRepairWorker` \u2014 async background worker with semaphore-capped\n    concurrency, in-flight + recently-attempted dedup, atomic write\n    via `.tmp` rename.\n  - `sweep_and_queue_repairs()` \u2014 startup-time DB-vs-disk reconcile.\n\n- New typed `Services` container at `backend/services/__init__.py`,\n  closing migration tracker step **A2**. Lives in the package init\n  rather than `backend/services.py` because the latter would collide\n  with the existing `backend/services/` package. Constructed in\n  `main.py` lifespan and exposed as `app.state.services` \u2014 both\n  `app.state.X` (legacy) and `app.state.services.X` (new) work in\n  parallel during the multi-PR transition. The new\n  `poster_repair_worker` is the first field accessed via the new path\n  in production code; existing fields (`led_service`, `cec_controller`,\n  etc.) still use the legacy direct-attribute path until follow-up\n  PRs migrate them one at a time."
+      "notes": "### Fixes\n- **Self-healing posters.** When a movie's poster file is missing, the slideshow skips that movie cleanly (no blank frame) and re-downloads the poster in the background. The repaired poster appears on the next rotation.\n- **Boot-time poster check.** On startup, htMarquee verifies every cached movie's poster file is present and re-downloads any that are missing."
     },
     {
       "version": "1.0.51",
       "date": "2026-04-28",
-      "notes": "### Fixes\n- **HTTP \u21c4 HTTPS protocol switch race:** toggling *Enable HTTPS*\n  in env config and clicking *Restart* no longer lands on\n  \"connection refused\". The post-restart polling now requires three\n  consecutive successful health responses on the same URL plus a\n  2-second settle buffer before redirecting, instead of redirecting\n  on the first response (which could fire while uvicorn was\n  mid-bind on the new port). Total wait window extended from 60 s\n  to 90 s. Verified end-to-end on the Pi via Playwright in both\n  HTTP\u2192HTTPS and HTTPS\u2192HTTP directions."
+      "notes": "### Fixes\n- **HTTP \u21c4 HTTPS protocol switch race:** toggling Enable HTTPS and clicking Restart no longer lands on \"connection refused\". The page now waits for the server to be fully ready before reloading on the new protocol."
     },
     {
       "version": "1.0.50",
       "date": "2026-04-24",
-      "notes": "### Fixes\n- Pre-create `assets/`, `logs/`, and `backups/` inside the shared\n  data directory during install (and on first OTA) so their symlinks\n  in the active slot resolve to real directories. Previously `backups/`\n  was a dangling symlink until the first backup was created, which\n  caused `Path.mkdir(exist_ok=True)` in the backup code path to raise\n  `FileExistsError` \u2014 the symlink existed but its target didn't, so\n  `is_dir()` returned False."
+      "notes": "### Fixes\n- Fix first-time backup failing on fresh installs."
     },
     {
       "version": "1.0.49",
       "date": "2026-04-24",
-      "notes": "### Fixes\n- A/B slot setup now pre-creates symlinks for every shared data item \u2014\n  `cache_metadata.db`, `.env`, `license.json`, `backups/` \u2014 even when\n  the item doesn't exist yet at install time. Previously the SQLite\n  database and any later-uploaded license file landed inside the active\n  slot as regular files instead of in the shared data directory, so the\n  first OTA swap would activate the inactive slot with no DB / no\n  license and the app would look like it had lost every setting,\n  cached movie, and the user's PIN.\n- Fresh v1.0.49 installs get the correct layout automatically. Existing\n  installs that already have data in slot A will have it migrated on\n  the next install or update; no manual action required if you\n  re-deprovision and reinstall."
+      "notes": "### Fixes\n- A/B slot OTA updates no longer risk losing your data, settings, or license. Fresh v1.0.49 installs get the correct layout automatically; existing installs are migrated on the next install or update."
     },
     {
       "version": "1.0.48",
       "date": "2026-04-24",
-      "notes": "### Fixes\n- Fresh installs and legacy installs now set up the A/B slot layout\n  correctly, so in-app \"Install update\" no longer fails with\n  \"Failed to configure A/B slot mode. Check logs for details.\"\n- If you hit that error on v1.0.47 or earlier, re-run the standard\n  install command to recover in place \u2014 it will promote your plain\n  install to the slot layout and set the missing sudo rules:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`\n\n  After it finishes, in-app updates will work going forward."
+      "notes": "### Fixes\n- \"Failed to configure A/B slot mode\" error during in-app updates is fixed. If you hit this on v1.0.47 or earlier, re-run the install command to recover:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`"
     },
     {
       "version": "1.0.47",
       "date": "2026-04-24",
-      "notes": "### Fixes\n- Toggling \"Enable HTTPS\" no longer locks you out. The new protocol is\n  persisted but doesn't take effect until a restart, and the save action\n  now prompts \"Restart now?\" and reloads the page on whichever protocol\n  the server comes back up on.\n- Switching auth mode (PIN \u2194 Password) now prompts for a fresh\n  credential inline before you save. Previously the old PIN/password\n  hash was silently reused under the new mode, leaving an unusable\n  account.\n- Changing auth mode signs you out and rotates the session secret, so\n  any open tabs or stale cookies can't keep acting under the old\n  credential.\n- Switching auth mode to \"None\" shows a security confirmation dialog\n  before stripping authentication.\n- Changing the device IP, hostname, DHCP mode, or NTP server now offers\n  an immediate \"Restart now?\" button when the change can only apply on\n  service restart. No more hunting for the Restart button under\n  Maintenance.\n- Smoke tests no longer leave the display paused. The internal pause\n  toggle is now exercised twice so the pre-existing state is preserved."
+      "notes": "### Fixes\n- **Toggling \"Enable HTTPS\" no longer locks you out.** The save action now prompts \"Restart now?\" and reloads the page on whichever protocol the server comes back up on.\n- **Switching auth mode (PIN \u2194 Password) now prompts for a fresh credential** before saving. Previously the old credential was silently reused under the new mode.\n- **Changing auth mode signs you out and rotates the session.** Open tabs and stale cookies can't keep acting under the old credential.\n- **Switching auth mode to \"None\" shows a security confirmation** before stripping authentication.\n- **Network changes** (IP, hostname, DHCP, NTP) now offer an immediate \"Restart now?\" button when the change requires a service restart."
     },
     {
       "version": "1.0.46",
       "date": "2026-04-23",
-      "notes": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and\n  trailer so the display has working content immediately, even\n  before a TMDB API key is set\n- Default interstitial slide that plays every 10 posters \u2014 always\n  enabled and cannot be disabled or deleted\n- Plex and Jellyfin playback banners can now be independently\n  shown/hidden and have their own font color pickers\n- Playback banner text is auto-fit to keep long strings on-screen\n\n### Fixes\n- Theater Badges \"Generate\" speaker layout button no longer\n  triggers an accidental settings save, fixing sporadic \"database\n  is locked\" errors on first attempt\n- Enabling Plex or Jellyfin immediately after entering a server\n  URL now works \u2014 previously the enable toggle was validated\n  before the URL was persisted, returning a misleading error\n- Adding a TMDB API key on a fresh install correctly triggers the\n  initial cache seed; the shipped demo movie no longer counts as\n  existing content and blocks the seed\n- Settings PATCH path for webhook callers now returns all banner\n  fields consistently"
+      "notes": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and trailer so the display has working content immediately, even before a TMDB API key is set.\n- Default interstitial slide that plays every 10 posters \u2014 always enabled.\n- Plex and Jellyfin playback banners can now be independently shown/hidden and have their own font color pickers.\n- Playback banner text is auto-fit to keep long strings on-screen.\n\n### Fixes\n- Theater Badges \"Generate\" button no longer triggers an accidental settings save.\n- Enabling Plex or Jellyfin immediately after entering a server URL now works.\n- Adding a TMDB API key on a fresh install correctly triggers the initial cache seed."
     },
     {
       "version": "1.0.45",
       "date": "2026-04-20",
-      "notes": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes\n  that gate webhook processing and require server IP/URL to be set\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster"
+      "notes": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes that gate webhook processing.\n- Animated theater marquee banner with chasing lights during fresh install and provisioning.\n\n### Improvements\n- Movie cards now show your preferred poster when one is set."
     },
     {
       "version": "1.0.44",
       "date": "2026-04-18",
-      "notes": "### New\n- Animated theater marquee banner with chasing lights during\n  fresh install and provisioning\n\n### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster"
+      "notes": "### New\n- Animated theater marquee banner with chasing lights during fresh install and provisioning.\n\n### Improvements\n- Movie cards now show your preferred poster when one is set."
     },
     {
       "version": "1.0.43",
       "date": "2026-04-18",
-      "notes": "### Improvements\n- Movie cards now show the preferred poster when one is set, instead\n  of always showing the default poster"
+      "notes": "### Improvements\n- Movie cards now show your preferred poster when one is set."
     },
     {
       "version": "1.0.42",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix \"TV Status Unknown\" flickering on the dashboard \u2014 CEC queries\n  frequently time out due to slow cec-client invocations, which was\n  clobbering the cached status on every failed poll. Now keeps the\n  last known good status and only shows \"unknown\" after 3 consecutive\n  failures\n\n### Improvements\n- CEC status updates faster after sending power commands \u2014 fast\n  polling window extended from 10s to 30s to cover slow TVs, and\n  active source query is skipped during fast polling to halve\n  per-poll latency"
+      "notes": "### Fixes\n- Fix \"TV Status Unknown\" flickering on the dashboard. Now keeps the last known good status and only shows \"unknown\" after 3 consecutive failures.\n\n### Improvements\n- CEC status updates faster after sending power commands."
     },
     {
       "version": "1.0.41",
       "date": "2026-04-17",
-      "notes": "### Improvements\n- CEC status updates faster after sending power commands \u2014 fast\n  polling window extended from 10s to 30s to cover slow TVs, and\n  active source query is skipped during fast polling to halve\n  per-poll latency"
+      "notes": "### Improvements\n- CEC status updates faster after sending power commands."
     },
     {
       "version": "1.0.40",
       "date": "2026-04-17",
-      "notes": "### New Feature: Live CEC TV Status Monitor\n- CEC TV power status now updates automatically via a background\n  monitor \u2014 no more stale \"TV is Off\" after sending power commands\n- After any CEC command, status polls every 1 second for 10 seconds\n  to catch the TV's response, then resumes normal 30-second polling\n- Dashboard TV Control panel now shows:\n  - Transition states (\"TV Turning On...\" / \"TV Turning Off...\") with\n    a pulsing amber indicator\n  - TV name and HDMI port (e.g. \"SAMSUNG \u00b7 HDMI 2\")\n  - Active source indicator (whether the Pi is the current input)\n- CEC status changes are broadcast via WebSocket \u2014 the dashboard\n  updates live without manual refresh"
+      "notes": "### New: Live CEC TV Status Monitor\n- TV power status now updates automatically \u2014 no more stale \"TV is Off\" after sending power commands.\n- Dashboard TV Control panel now shows transition states (\"TV Turning On...\" / \"TV Turning Off...\"), TV name and HDMI port, and an active source indicator."
     },
     {
       "version": "1.0.39",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of\n  the display cycle before the next movie transitions in\n- Poster display time minimum lowered from 5 to 3 seconds"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions.\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of the display cycle.\n- Poster display time minimum lowered from 5 to 3 seconds."
     },
     {
       "version": "1.0.38",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of\n  the display cycle before the next movie transitions in"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions.\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of the display cycle."
     },
     {
       "version": "1.0.37",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  keeps the animated poster playing through the TRANSITION phase until\n  the next movie loads"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions."
     },
     {
       "version": "1.0.36",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Revert animated poster display changes from v1.0.33-v1.0.35 \u2014\n  restores original animated poster rendering behavior"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Revert animated poster display changes from v1.0.33-v1.0.35."
     },
     {
       "version": "1.0.35",
       "date": "2026-04-17",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static\n  posters. Transitions (crossfade, wipe, dissolve) apply correctly\n  when entering and leaving an animated poster, video loops seamlessly\n  without fade-to-black gaps, and poster display timing is consistent"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static posters: transitions apply correctly when entering and leaving an animated poster, video loops seamlessly, and timing is consistent."
     },
     {
       "version": "1.0.34",
       "date": "2026-04-16",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters flashing to static poster during transitions \u2014\n  the display was stopping the animated poster video at the start of\n  the TRANSITION phase, showing the static poster for 2 seconds before\n  the next movie. Now keeps the animated poster playing through the\n  transition until the next movie loads"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions."
     },
     {
       "version": "1.0.33",
       "date": "2026-04-16",
-      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie \u2014\n  the manual cycle task was cancelling itself when trying to resume\n  idle mode, preventing the MANUAL\u2192IDLE transition from completing\n- Fix animated posters only playing once before reverting to static \u2014\n  movies without trailers were using the pre-trailer duration (6s)\n  instead of the playlist display duration (default 30s), leaving\n  too little time for the animated poster loop-fade cycle"
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters only playing once before reverting to the static poster."
     },
     {
       "version": "1.0.32",
       "date": "2026-04-16",
-      "notes": "### Fixes\n- Fix banner text overflowing when Plex or Jellyfin playback starts \u2014\n  the banner font size is now recalculated to fit the integration's\n  banner text and font within the display width\n- Fix webhook URL copy button failing on HTTP connections \u2014 added\n  clipboard fallback for insecure origins where navigator.clipboard\n  is unavailable\n- Fix ACTIVE banner hardcoded to \"Now Playing\" instead of using the\n  per-integration banner text from settings\n\n### Improvements\n- Integration banner font is now sent to the display when playback\n  starts, and restored to the idle font when playback stops"
+      "notes": "### Fixes\n- Fix banner text overflowing when Plex or Jellyfin playback starts \u2014 the banner font size is now recalculated to fit.\n- Fix webhook URL copy button failing on HTTP connections.\n- Fix ACTIVE banner hardcoded to \"Now Playing\" instead of using your configured banner text.\n\n### Improvements\n- Integration banner font is now sent to the display when playback starts and restored to the idle font when playback stops."
     },
     {
       "version": "1.0.31",
       "date": "2026-04-16",
-      "notes": "### Fixes\n- Fix kiosk display not restarting after OTA update \u2014 the restart was\n  racing the symlink swap, so the kiosk reloaded old code. Now restarts\n  after the slot swap completes."
+      "notes": "### Fixes\n- Fix kiosk display not restarting after OTA update."
     },
     {
       "version": "1.0.30",
       "date": "2026-04-16",
-      "notes": "### Fixes\n- Fix info row icons blinking when display settings change \u2014 settings\n  refreshes no longer trigger the fade-in animation meant for movie\n  transitions\n\n### Improvements\n- Bump default banner font size from 3vh to 6vh for better visibility\n  on fresh installs\n- Restart kiosk display automatically during OTA update swap so updated\n  display code takes effect without manual intervention\n\n### Housekeeping\n- Remove obsolete docs (MAINTENANCE.md, PI5_DISPLAY.md) superseded by\n  internal reference files"
+      "notes": "### Fixes\n- Fix info row icons blinking when display settings change.\n\n### Improvements\n- Bump default banner font size from 3vh to 6vh for better visibility on fresh installs.\n- Restart kiosk display automatically during OTA update so updated display code takes effect without manual intervention."
     },
     {
       "version": "1.0.29",
       "date": "2026-04-16",
-      "notes": "### Improvements\n- Format badge icons (Dolby Atmos, DTS:X, etc.) are now vertically\n  centered on the info row instead of bottom-aligned \u2014 rectangular\n  badges no longer sit lower than square ones"
+      "notes": "### Improvements\n- Format badge icons (Dolby Atmos, DTS:X, etc.) are now vertically centered on the info row."
     },
     {
       "version": "1.0.28",
       "date": "2026-04-13",
-      "notes": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests"
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
     },
     {
       "version": "1.0.27",
       "date": "2026-04-13",
-      "notes": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests"
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
     },
     {
       "version": "1.0.26",
       "date": "2026-04-13",
-      "notes": "### New Features\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan,\n  enter your email, and check out directly from the License tab\n- New `POST /api/license/checkout-url` endpoint builds a prefilled\n  Lemon Squeezy checkout URL with the Pi's serial embedded\n\n### Improvements\n- Removed hardcoded default PIN from provision.sh (fresh installs now\n  require first-run setup)\n- CLAUDE.md untracked from the repository\n\n### Tests\n- Fixed 28 pre-existing E2E test selector drifts\n- Hardened reload flakiness in settings E2E tests"
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
     },
     {
       "version": "1.0.25",
       "date": "2026-04-10",
-      "notes": "### Security\n- Expanded PyArmor obfuscation from 51 to 57 modules (Tier 2d)\n- Added `content_filter`, `network_monitor`, `system_refresh`,\n  `websocket_manager`, `color_palette`, and `image_processing`\n- All remaining plain-source Python files (models, schemas, config)\n  are now minified with `python-minifier`: comments and docstrings\n  stripped, locals renamed, imports combined. Annotations are preserved\n  so Pydantic and SQLAlchemy keep working."
+      "notes": "### Security\n- Expanded code protection coverage."
     },
     {
       "version": "1.0.24",
       "date": "2026-04-10",
-      "notes": "### Security\n- Expanded PyArmor obfuscation from 46 to 51 modules (Tier 2c)\n- Now also protects `backend/main.py` (FastAPI entry point, WebSocket\n  handler, middleware) and the display renderer (`pygame_display.py`,\n  `gl_poc.py`, `gl_utils.py`, `gl_transitions.py`)\n- Both backend service and kiosk display process are now running\n  bytecode-encrypted Python"
+      "notes": "### Security\n- Expanded code protection coverage to the FastAPI entry point and the kiosk display renderer."
     },
     {
       "version": "1.0.23",
       "date": "2026-04-10",
-      "notes": "### Security\n- Expanded PyArmor obfuscation from 44 to 46 modules (Tier 2b)\n- Now also protects `routes/auth.py` and `routes/license.py`\n- CI now stages files preserving directory structure, so basename\n  collisions between `core/` and `routes/` modules no longer limit\n  which files can be obfuscated"
+      "notes": "### Security\n- Expanded code protection coverage to the auth and license route handlers."
     },
     {
       "version": "1.0.22",
       "date": "2026-04-10",
-      "notes": "### Security\n- Expanded PyArmor obfuscation from 32 to 44 modules (Tier 2a)\n- Now protects API clients (TMDB, OMDb, Wikidata, MPV) and all remaining\n  route handlers (system, backup, settings, movies, storage, logs, support)\n- Core auth helpers (bcrypt, JWT, rate limiting) also obfuscated"
+      "notes": "### Security\n- Expanded code protection coverage to the API clients and route handlers, including the bcrypt/JWT auth helpers."
     },
     {
       "version": "1.0.21",
       "date": "2026-04-10",
-      "notes": "### Security\n- Expanded PyArmor obfuscation from 13 to 32 modules\n- Now protects: state machine, update manager, auto-cacher, playlist scheduler,\n  storage janitor, metadata enrichment, RPi LED protocol, and all CRUD route handlers\n- Proprietary tier quota and slideshow logic no longer readable in plain text"
+      "notes": "### Security\n- Expanded code protection coverage. Tier quota and slideshow logic are no longer readable in plain text."
     },
     {
       "version": "1.0.20",
       "date": "2026-04-09",
-      "notes": "### Security\n- Stripped proprietary docs, dev tools, and internal files from public release tarball\n- Removed all prior releases from public GitHub repo\n\n### Improvements\n- Release tarball now contains only user-facing files: app code, deploy scripts, user docs, fonts"
+      "notes": "### Improvements\n- Public release tarball trimmed to only the files needed to run the app."
     },
     {
       "version": "1.0.19",
       "date": "2026-04-09",
-      "notes": "### Bug Fixes\n- Fixed login prompt appearing on Hardware tab for Matinee users (tier 403 vs auth 403)\n- Fixed releases.json not including current version in shipped tarball\n- Fixed provision.sh WiFi grep crash with pipefail on ethernet-only Pi\n- Fixed service ReadWritePaths crash on fresh install (no A/B slots)\n\n### Improvements\n- Manifest URL field is now read-only by default with Edit/Lock toggle\n- Backend validates manifest URL before saving (must return valid JSON)\n- Provisioning clears apt and pip caches (~460 MB saved)\n\n### Tests\n- 27 auth tests: setup wizard, login, logout, rate limiting, JWT, HTTPS\n- 74 auth matrix tests: all auth modes x all endpoints x tier gate distinction"
+      "notes": "### Fixes\n- Fix login prompt incorrectly appearing on the Hardware tab for Matinee users.\n- Fix release notes not appearing for the current version after a fresh install.\n- Fix fresh-install crash on ethernet-only Pi.\n- Fix service crash on fresh install (no A/B slots).\n\n### Improvements\n- Manifest URL field is now read-only by default with an Edit/Lock toggle.\n- Backend validates manifest URL before saving."
     },
     {
       "version": "1.0.18",
       "date": "2026-04-09",
-      "notes": "### Bug Fixes\n- Fixed fresh install crash: WiFi grep pipeline with pipefail on ethernet-only Pi\n- Fixed service startup failure on fresh install: A/B slot directories now optional in ReadWritePaths\n- Fixed deprovision user removal when display process is still running\n- Web installer now correctly runs provision.sh on fresh Pi (was only calling install.sh)\n\n### New\n- Added deprovision.sh for complete htMarquee removal (supports --dry-run and --full)"
+      "notes": "### Fixes\n- Fix fresh-install crash on ethernet-only Pi.\n- Fix service startup failure on fresh install.\n- Fix deprovision when the display process is still running.\n- Web installer now correctly runs full provisioning on a fresh Pi.\n\n### New\n- Added deprovision script for complete htMarquee removal (supports `--dry-run` and `--full`)."
     },
     {
       "version": "1.0.17",
       "date": "2026-04-09",
-      "notes": "### New Features\n- Public README with screenshots pushed to GitHub on each release\n- Web install script for curl | bash installs from htmarquee.com\n\n### Bug Fixes\n- Font size and color now survive reboots, service restarts, and system refresh\n- Fixed font settings not passed to SlideshowState constructor\n- Fixed font settings missing from generate_upcoming_playlist startup path\n- Sudoers entry for OTA updates added to install script\n- Service capabilities (CAP_SETUID, CAP_SETGID, CAP_DAC_OVERRIDE) for sudo during OTA\n- Migrated old Forgejo manifest URL to GitHub for existing installations\n\n### Tests\n- 93 new tests: OTA update manager, deploy validation, fonts API, settings pipeline, release notes\n- Deploy validation catches missing sudo capabilities and sudoers entries\n\n### Infrastructure\n- Repo cleanup: non-app files moved to _local/ (gitignored)\n- All Forgejo URLs migrated to HTTPS\n- CI runner updated for HTTPS with SSL verify skip in containers"
+      "notes": "### New\n- Web install script for `curl | bash` installs from htmarquee.com.\n\n### Fixes\n- Font size and color now survive reboots, service restarts, and system refresh.\n- Sudoers entry for OTA updates added to the install script.\n- Migrated old manifest URL to the new public location for existing installations."
     },
     {
       "version": "1.0.16",
       "date": "2026-04-08",
-      "notes": "### New Features\n- Adjustable banner font size with slider (1.0\u20138.0vh range)\n- Banner font color picker \u2014 choose any color for the header text\n- Public update distribution \u2014 all Pis now pull updates from GitHub\n- Default manifest URL set automatically for new and existing installs\n\n### Improvements\n- TMDB and OMDb API key requirements added to product website\n- Forgejo instance migrated to HTTPS across all CI and documentation\n- Deploy workflow updated with display/ and fonts/ sync reminders\n\n### Infrastructure\n- CI pipeline now publishes obfuscated releases to GitHub (htMarquee/htMarquee_app)\n- Manifest and release notes pushed to GitHub for public access\n- Website stripped to static-only for initial launch (chat widget deferred)"
+      "notes": "### New\n- Adjustable banner font size with a slider (1.0\u20138.0vh range).\n- Banner font color picker \u2014 choose any color for the header text.\n- Public update distribution \u2014 all Pis now pull updates from the public manifest."
     },
     {
       "version": "1.0.15",
       "date": "2026-04-08",
-      "notes": "### New Features\n- Customizable banner fonts for the display header\n- 8 built-in Google Fonts: Audiowide, Barlow Condensed, Bitcount Grid Double, Doto, Geo, Monoton, Sixtyfour, Zen Tokyo Zoo\n- Upload custom .ttf/.otf/.woff/.woff2 font files for the banner\n- Separate font selection for idle, Plex, and Jellyfin playback banners\n- Font changes hot-apply via WebSocket \u2014 no restart needed\n- Release notes now displayed in the Software Update section\n- Current version notes shown with expandable release history\n\n### Bug Fixes\n- Rollback progress bar now advances instead of staying stuck at 0%\n- Rollback button grayed out when no previous version is available"
+      "notes": "### New\n- Customizable banner fonts for the display header, with 8 built-in Google Fonts (Audiowide, Barlow Condensed, Bitcount Grid Double, Doto, Geo, Monoton, Sixtyfour, Zen Tokyo Zoo).\n- Upload custom .ttf/.otf/.woff/.woff2 font files for the banner.\n- Separate font selection for idle, Plex, and Jellyfin playback banners.\n- Font changes hot-apply via WebSocket \u2014 no restart needed.\n- Release notes now displayed in the Software Update section, with expandable history.\n\n### Fixes\n- Rollback progress bar now advances instead of staying stuck at 0%.\n- Rollback button is grayed out when no previous version is available."
     },
     {
       "version": "1.0.14",
       "date": "2026-04-07",
-      "notes": "### LED & Website Fixes\n- LED off now clears entire strip regardless of configured count\n- Fixed OTA slot cleanup permission errors\n- Fixed 11 website bugs: favicon, mobile CTA, CORS, OG tags, accessibility\n- Fixed 20+ inaccuracies in product website and chat API knowledge base"
+      "notes": "### Fixes\n- LED off now clears the entire strip regardless of configured count.\n- Fixed OTA slot cleanup permission errors."
     },
     {
       "version": "1.0.13",
       "date": "2026-04-07",
-      "notes": "### LED UI & OTA Improvements\n- Fixed LED sections not graying out when GPIO disabled\n- OTA updates now install Pi-specific dependencies automatically"
+      "notes": "### Fixes\n- Fixed LED sections not graying out when GPIO is disabled.\n- OTA updates now install Pi-specific dependencies automatically."
     },
     {
       "version": "1.0.12",
       "date": "2026-04-07",
-      "notes": "### LED Strip Control\n- LED Strip Control grays out when GPIO disabled\n- GPIO toggle shows restart prompt with one-click restart button\n- Added GPIO pinout diagram to hardware settings"
+      "notes": "### LED Strip Control\n- LED Strip Control grays out when GPIO is disabled.\n- GPIO toggle shows a restart prompt with a one-click restart button.\n- Added a GPIO pinout diagram to hardware settings."
     },
     {
       "version": "1.0.11",
       "date": "2026-04-05",
-      "notes": "### Bug Fix\n- Fixed license tier detection \u2014 UI no longer shows matinee locks with a valid Premiere license"
+      "notes": "### Fixes\n- Fix license tier detection \u2014 the UI no longer shows Matinee locks with a valid Premiere license."
     },
     {
       "version": "1.0.9",
       "date": "2026-04-05",
-      "notes": "### Security\n- Improved license code obfuscation with per-build random identifier renaming"
+      "notes": "### Security\n- Improved license code protection."
     },
     {
       "version": "1.0.5",
       "date": "2026-04-03",
-      "notes": "### Version Stamping\n- App now correctly reports its release version instead of always showing v1.0.0"
+      "notes": "### Fixes\n- The app now correctly reports its release version instead of always showing v1.0.0."
     },
     {
       "version": "1.0.2",
       "date": "2026-04-03",
-      "notes": "### Build Pipeline\n- Initial release pipeline with PyArmor obfuscation, Ed25519 signing, and OTA manifest generation"
+      "notes": "Initial release."
     }
   ]
 }
