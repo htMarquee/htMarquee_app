@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.56",
-    "released_at": "2026-05-02T13:09:27Z",
-    "changelog": "### Fixes\n\n- **Backups now capture the database accurately.** Previously a small\n  number of recent changes could be missing from a backup, causing\n  subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi\n  keeps your Premiere tier intact without re-uploading the license.\n- **Trailer black-bar removal handles longer trailers reliably.**\n  Previously trailers around three minutes or more could time out during\n  analysis and skip the auto-crop step.\n- **Variable-aspect trailers preserve their full image.** Modern trailers\n  that shift aspect ratio mid-clip (IMAX expansion, anamorphic sequences)\n  no longer get over-cropped \u2014 when the aspect varies, the crop is\n  skipped or kept conservative so nothing important gets cut off.\n- **Animated movie posters no longer flash to static before the next\n  movie.** Previously, when an animated poster cycled to the next movie,\n  the marquee briefly showed the static version of the same poster\n  before the transition. The animated frame now holds smoothly through\n  the crossfade.",
+    "version": "1.0.57",
+    "released_at": "2026-05-06T14:39:17Z",
+    "changelog": "### Fixes\n\n- **Animated movie posters now transition cleanly to the next poster.**\n  No more flash-to-static, double-transition, or wrong-aspect \"squeeze\"\n  mid-fade.\n- **Animated \u2192 slide \u2192 next-poster sequences are smooth.** The animated\n  frame fades into the slide directly, and the slide fades into the\n  next poster directly, with no static flashes between any of them.\n- **Spotlight (manual play) now lets the progress bar reach 100%\n  before moving on**, matching the regular slideshow behavior.\n\n### Playlists\n\n- **The Edit modal now includes the movie list.** You can edit playlist\n  settings *and* manage movies (reorder, remove) in one place. Clicking\n  a playlist card opens the same combined modal.\n- **Drag-and-drop or \u25b2\u25bc arrows let you reorder movies within a\n  playlist.** The new order is saved when you click Save.\n- **Adding, removing, or reordering movies in an active playlist takes\n  effect within seconds** \u2014 no need to deactivate and reactivate.\n- **Renamed \"Loop\" \u2192 \"Sequential\"** in the playback-mode picker to\n  better reflect what it does.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.56/htmarquee-1.0.56.tar.gz",
-    "tarball_sha256": "1d6fe90e8a5252a038dc4e83b68625ab42b1a74349b887167ad3c19fe83f721c",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.56/htmarquee-1.0.56.tar.gz.sig",
-    "size_bytes": 26376350,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.57/htmarquee-1.0.57.tar.gz",
+    "tarball_sha256": "4568f31fcd6797ede934bc5a6e54c5fb88d7d9d9a1c08b7302570e040927f87d",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.57/htmarquee-1.0.57.tar.gz.sig",
+    "size_bytes": 26398494,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.0.57",
+      "date": "2026-05-06",
+      "notes": "### Fixes\n\n- **Animated movie posters now transition cleanly to the next poster.**\n  No more flash-to-static, double-transition, or wrong-aspect \"squeeze\"\n  mid-fade.\n- **Animated \u2192 slide \u2192 next-poster sequences are smooth.** The animated\n  frame fades into the slide directly, and the slide fades into the\n  next poster directly, with no static flashes between any of them.\n- **Spotlight (manual play) now lets the progress bar reach 100%\n  before moving on**, matching the regular slideshow behavior.\n\n### Playlists\n\n- **The Edit modal now includes the movie list.** You can edit playlist\n  settings *and* manage movies (reorder, remove) in one place. Clicking\n  a playlist card opens the same combined modal.\n- **Drag-and-drop or \u25b2\u25bc arrows let you reorder movies within a\n  playlist.** The new order is saved when you click Save.\n- **Adding, removing, or reordering movies in an active playlist takes\n  effect within seconds** \u2014 no need to deactivate and reactivate.\n- **Renamed \"Loop\" \u2192 \"Sequential\"** in the playback-mode picker to\n  better reflect what it does."
+    },
     {
       "version": "1.0.56",
       "date": "2026-05-02",
