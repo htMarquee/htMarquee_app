@@ -1,20 +1,20 @@
 {
   "latest": {
-    "version": "1.0.57",
-    "released_at": "2026-05-06T14:39:17Z",
-    "changelog": "### Fixes\n\n- **Animated movie posters now transition cleanly to the next poster.**\n  No more flash-to-static, double-transition, or wrong-aspect \"squeeze\"\n  mid-fade.\n- **Animated \u2192 slide \u2192 next-poster sequences are smooth.** The animated\n  frame fades into the slide directly, and the slide fades into the\n  next poster directly, with no static flashes between any of them.\n- **Spotlight (manual play) now lets the progress bar reach 100%\n  before moving on**, matching the regular slideshow behavior.\n\n### Playlists\n\n- **The Edit modal now includes the movie list.** You can edit playlist\n  settings *and* manage movies (reorder, remove) in one place. Clicking\n  a playlist card opens the same combined modal.\n- **Drag-and-drop or \u25b2\u25bc arrows let you reorder movies within a\n  playlist.** The new order is saved when you click Save.\n- **Adding, removing, or reordering movies in an active playlist takes\n  effect within seconds** \u2014 no need to deactivate and reactivate.\n- **Renamed \"Loop\" \u2192 \"Sequential\"** in the playback-mode picker to\n  better reflect what it does.",
+    "version": "1.0.58",
+    "released_at": "2026-05-07T16:31:34Z",
+    "changelog": "### Behind the scenes\n\n- **Internal architecture cleanup.** Foundations for the next batch of\n  features: a typed event bus, a declarative settings registry, and the\n  start of frontend modularization. No user-facing changes this release.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.57/htmarquee-1.0.57.tar.gz",
-    "tarball_sha256": "4568f31fcd6797ede934bc5a6e54c5fb88d7d9d9a1c08b7302570e040927f87d",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.57/htmarquee-1.0.57.tar.gz.sig",
-    "size_bytes": 26398494,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.58/htmarquee-1.0.58.tar.gz",
+    "tarball_sha256": "831d09d15c6c457bd098d73916bdf71b91ce3528b23948fe5f8dad1c54346a85",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.58/htmarquee-1.0.58.tar.gz.sig",
+    "size_bytes": 26397157,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.0.57",
-      "date": "2026-05-06",
-      "notes": "### Fixes\n\n- **Animated movie posters now transition cleanly to the next poster.**\n  No more flash-to-static, double-transition, or wrong-aspect \"squeeze\"\n  mid-fade.\n- **Animated \u2192 slide \u2192 next-poster sequences are smooth.** The animated\n  frame fades into the slide directly, and the slide fades into the\n  next poster directly, with no static flashes between any of them.\n- **Spotlight (manual play) now lets the progress bar reach 100%\n  before moving on**, matching the regular slideshow behavior.\n\n### Playlists\n\n- **The Edit modal now includes the movie list.** You can edit playlist\n  settings *and* manage movies (reorder, remove) in one place. Clicking\n  a playlist card opens the same combined modal.\n- **Drag-and-drop or \u25b2\u25bc arrows let you reorder movies within a\n  playlist.** The new order is saved when you click Save.\n- **Adding, removing, or reordering movies in an active playlist takes\n  effect within seconds** \u2014 no need to deactivate and reactivate.\n- **Renamed \"Loop\" \u2192 \"Sequential\"** in the playback-mode picker to\n  better reflect what it does."
+      "version": "1.0.58",
+      "date": "2026-05-07",
+      "notes": "### Behind the scenes\n\n- **Internal architecture cleanup.** Foundations for the next batch of\n  features: a typed event bus, a declarative settings registry, and the\n  start of frontend modularization. No user-facing changes this release."
     },
     {
       "version": "1.0.56",
