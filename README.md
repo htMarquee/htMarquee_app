@@ -20,10 +20,6 @@
 
 htMarquee transforms a Raspberry Pi 5 and a 4K TV into a theater-quality movie poster display. It automatically cycles through movie posters with trailers, syncs with your Plex or Jellyfin server during playback, and provides a web-based control panel accessible from any device.
 
-<p align="center">
-  <img src="readme-assets/display-landscape.png" alt="htMarquee Display with movie info" width="700">
-</p>
-
 ### Key Features
 
 - **Automated poster slideshow** with smooth GPU-accelerated transitions
@@ -34,11 +30,16 @@ htMarquee transforms a Raspberry Pi 5 and a 4K TV into a theater-quality movie p
 - **Customizable banner** — text, font, size, color, or custom image
 - **LED strip sync** (WS2812B/SK6812) — ambient lighting that matches the display
 - **HDMI-CEC** — auto power on/off your TV on schedule
-- **Custom slides** — insert your own images/videos between movies
+- **Custom slides** — interstitial images and videos between movies
 - **OTA updates** — one-click updates from the app
+- **Works out of the box** — ships with a demo poster + trailer so the display works immediately, even before you set up TMDB
 
 <p align="center">
   <img src="readme-assets/dashboard.png" alt="htMarquee Web Dashboard" width="700">
+</p>
+
+<p align="center">
+  <img src="readme-assets/movies.png" alt="Browse and manage your cached movie library" width="700">
 </p>
 
 ## Tiers
@@ -56,7 +57,7 @@ Everything you need to get started:
 - Format badge icons (Dolby Atmos, DTS:X, etc.)
 - Info row customization
 - Backup & restore
-- Manual mode
+- Spotlight mode — lock the display to a specific movie
 
 ### Premiere (Paid)
 
@@ -65,7 +66,7 @@ Unlock the full experience:
 - **Unlimited** movies and playlists
 - **Trailer playback** with pre/post poster timing
 - **Animated posters** (MP4/WebM loops)
-- **All transitions** — crossfade, slide, zoom, wipe, 3D flip, and more
+- **All transitions** — crossfade, slide, zoom, dissolve, plus directional and radial wipes
 - **Multiple posters** per movie with auto-rotation
 - **Plex & Jellyfin sync** — live "Now Playing" mode
 - **HDMI-CEC TV control** with scheduled on/off
