@@ -1,20 +1,20 @@
 {
   "latest": {
-    "version": "1.0.60",
-    "released_at": "2026-05-11T14:09:37Z",
-    "changelog": "### Behind the scenes\n\n- **Architecture cleanup, continued.** Database schema upgrades now\n  run through a numbered-migration framework that fails loudly instead\n  of silently swallowing errors. The runtime settings layer was\n  consolidated onto a single key/value store, removing some race\n  conditions when settings change quickly. Internal frontend modules\n  now communicate through proper ES module imports instead of browser\n  globals. No user-facing changes this release.",
+    "version": "1.0.61",
+    "released_at": "2026-05-11T20:09:24Z",
+    "changelog": "### Fixes\n\n- **Cleaner cache deletion.** Removing a cached movie \u2014 through the\n  \"Delete from cache\" button, the broken-cache cleanup, or the\n  block-a-movie flow \u2014 now also removes the movie's trailer metadata\n  rows and any extra trailer variants the \"Download All\" button had\n  previously downloaded. Before this fix, those entries were\n  orphaned in the database and on disk.\n\n- **Demo content survives reinstall.** If you deprovision and\n  reinstall, the shipped demo movie (Big Buck Bunny) and demo slide\n  now come back correctly. Previously the seed markers in the\n  preserved data directory caused the seeder to skip, leaving\n  orphaned media on disk.\n\n### Behind the scenes\n\n- **Frontend modularization continued.** Internal frontend modules\n  now communicate exclusively through ES module imports \u2014 the last\n  cross-feature `window.X` bridges between modules were retired.\n  No user-visible change.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.60/htmarquee-1.0.60.tar.gz",
-    "tarball_sha256": "8e93bf3626067e58967a7d45ca624fc3843cb131bf60abb6a64bbbef8078df1d",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.60/htmarquee-1.0.60.tar.gz.sig",
-    "size_bytes": 26424817,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.61/htmarquee-1.0.61.tar.gz",
+    "tarball_sha256": "7acee1f0364d3959e04b46b84eaef6a542964015a8bd9eae7c44fb4eacfa3ff9",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.61/htmarquee-1.0.61.tar.gz.sig",
+    "size_bytes": 26425955,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.0.60",
+      "version": "1.0.61",
       "date": "2026-05-11",
-      "notes": "### Behind the scenes\n\n- **Architecture cleanup, continued.** Database schema upgrades now\n  run through a numbered-migration framework that fails loudly instead\n  of silently swallowing errors. The runtime settings layer was\n  consolidated onto a single key/value store, removing some race\n  conditions when settings change quickly. Internal frontend modules\n  now communicate through proper ES module imports instead of browser\n  globals. No user-facing changes this release."
+      "notes": "### Fixes\n\n- **Cleaner cache deletion.** Removing a cached movie \u2014 through the\n  \"Delete from cache\" button, the broken-cache cleanup, or the\n  block-a-movie flow \u2014 now also removes the movie's trailer metadata\n  rows and any extra trailer variants the \"Download All\" button had\n  previously downloaded. Before this fix, those entries were\n  orphaned in the database and on disk.\n\n- **Demo content survives reinstall.** If you deprovision and\n  reinstall, the shipped demo movie (Big Buck Bunny) and demo slide\n  now come back correctly. Previously the seed markers in the\n  preserved data directory caused the seeder to skip, leaving\n  orphaned media on disk.\n\n### Behind the scenes\n\n- **Frontend modularization continued.** Internal frontend modules\n  now communicate exclusively through ES module imports \u2014 the last\n  cross-feature `window.X` bridges between modules were retired.\n  No user-visible change."
     },
     {
       "version": "1.0.59",
