@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.0.62",
-    "released_at": "2026-05-12T00:51:08Z",
-    "changelog": "### Behind the scenes\n\n- **Frontend modularization completed.** The remaining feature code\n  in the main `app.js` script \u2014 settings tabs, hardware controls,\n  environment config, backup/restore, cache management, dashboard,\n  and more \u2014 moved into dedicated per-feature modules. No user-visible\n  change; the page loads and behaves identically.",
+    "version": "1.1.0",
+    "released_at": "2026-05-12T20:30:49Z",
+    "changelog": "### Reliability\n\n- OTA updates run in a separate background service. Update installs survive crashes or freezes that would previously have left the Pi in a half-installed state.\n- Restoring backups is much more reliable, even very large ones. The restore pipeline runs in its own background service with isolated memory, so a heavy restore can't take down the rest of the Pi.\n- The Restore-from-backup page now handles very large backups (8GB+) directly from the browser. The upload is automatically split into chunks so memory stays bounded regardless of backup size, and a single failed chunk retries instead of restarting the whole upload.\n- Settings saves are faster and no longer collide with each other.\n\n### Behind the scenes\n\n- Significant internal restructuring for long-term maintainability.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.62/htmarquee-1.0.62.tar.gz",
-    "tarball_sha256": "2eca97e6f4c47a067a15fb39cdc95a52dfefe5f9219935053b226c33a98e0fd3",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.0.62/htmarquee-1.0.62.tar.gz.sig",
-    "size_bytes": 26438222,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.0/htmarquee-1.1.0.tar.gz",
+    "tarball_sha256": "88e82e75de90b49d2476dd666bf546fd7999e451cc738c37683b2f6dee93fca4",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.0/htmarquee-1.1.0.tar.gz.sig",
+    "size_bytes": 26506379,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.1.0",
+      "date": "2026-05-12",
+      "notes": "### Reliability\n\n- OTA updates run in a separate background service. Update installs survive crashes or freezes that would previously have left the Pi in a half-installed state.\n- Restoring backups is much more reliable, even very large ones. The restore pipeline runs in its own background service with isolated memory, so a heavy restore can't take down the rest of the Pi.\n- The Restore-from-backup page now handles very large backups (8GB+) directly from the browser. The upload is automatically split into chunks so memory stays bounded regardless of backup size, and a single failed chunk retries instead of restarting the whole upload.\n- Settings saves are faster and no longer collide with each other.\n\n### Behind the scenes\n\n- Significant internal restructuring for long-term maintainability."
+    },
     {
       "version": "1.0.62",
       "date": "2026-05-12",
