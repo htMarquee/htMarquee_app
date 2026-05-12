@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.1.0",
-    "released_at": "2026-05-12T20:30:49Z",
-    "changelog": "### Reliability\n\n- OTA updates run in a separate background service. Update installs survive crashes or freezes that would previously have left the Pi in a half-installed state.\n- Restoring backups is much more reliable, even very large ones. The restore pipeline runs in its own background service with isolated memory, so a heavy restore can't take down the rest of the Pi.\n- The Restore-from-backup page now handles very large backups (8GB+) directly from the browser. The upload is automatically split into chunks so memory stays bounded regardless of backup size, and a single failed chunk retries instead of restarting the whole upload.\n- Settings saves are faster and no longer collide with each other.\n\n### Behind the scenes\n\n- Significant internal restructuring for long-term maintainability.",
+    "version": "1.1.1",
+    "released_at": "2026-05-12T21:36:58Z",
+    "changelog": "### Reliability\n\n- Fixes fresh installs from htmarquee.com. The v1.1.0 release tarball was missing the bundled installer, so first-time installs failed partway through. Existing systems updating via OTA were not affected.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.0/htmarquee-1.1.0.tar.gz",
-    "tarball_sha256": "88e82e75de90b49d2476dd666bf546fd7999e451cc738c37683b2f6dee93fca4",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.0/htmarquee-1.1.0.tar.gz.sig",
-    "size_bytes": 26506379,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.1/htmarquee-1.1.1.tar.gz",
+    "tarball_sha256": "6376759ac4224d2892216465c7ff685d44e2306bf18da003418dec220873a3ae",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.1/htmarquee-1.1.1.tar.gz.sig",
+    "size_bytes": 26512235,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.1.1",
+      "date": "2026-05-12",
+      "notes": "### Reliability\n\n- Fixes fresh installs from htmarquee.com. The v1.1.0 release tarball was missing the bundled installer, so first-time installs failed partway through. Existing systems updating via OTA were not affected."
+    },
     {
       "version": "1.1.0",
       "date": "2026-05-12",
