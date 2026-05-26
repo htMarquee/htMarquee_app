@@ -79,7 +79,7 @@ Unlock the full experience:
 
 ## Hardware Requirements
 
-- Raspberry Pi 5 (4GB+ RAM)
+- Raspberry Pi 5 — 4GB+ recommended; **2GB works** (great for a dev unit or smaller libraries). Pi 4 and earlier are not supported.
 - 16GB+ microSD card (U3 speed class, 32GB recommended)
 - Micro-HDMI to HDMI cable
 - 4K TV (60Hz recommended)
