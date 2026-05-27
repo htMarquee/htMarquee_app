@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.1.5",
-    "released_at": "2026-05-26T20:49:30Z",
-    "changelog": "### Backups & Restore\n\n- **Fixed a data-loss bug during restore.** A large backup could briefly fill\n  enough of the SD card that the automatic storage cleanup kicked in and deleted\n  cached movies mid-restore \u2014 on one cross-device restore it removed 112 of 276\n  movies. Restores now pause the cleanup until they finish, don't count the\n  in-progress backup file against free space, and protect just-restored movies\n  from eviction.\n- **Restoring onto a different device no longer changes that device's network\n  settings \u2014 unless you want it to.** The restore dialog's \"Keep current network\n  settings\" option (on by default) now genuinely preserves the target's IP,\n  hostname, and mDNS name; before, it could silently leave them overwritten by\n  the backup. Unchecking it still restores the backup's network settings \u2014 the\n  right choice when replacing a dead device with an identical one.\n- **Restore now checks free space first** and refuses with a clear message if the\n  backup won't fit, instead of starting and failing partway through.\n- Restoring a backup now ends with a clear \"Restart Required\" modal \u2014 one click\n  restarts the server to finish applying any schema migrations added since the\n  backup was taken.\n- Restore and update progress now update reliably in the web UI while work is in\n  progress.",
+    "version": "1.1.6",
+    "released_at": "2026-05-27T21:32:58Z",
+    "changelog": "### Posters\n\n- Missing or corrupted movie posters now re-download automatically in the\n  background, filling in gaps without any manual action.\n\n### Backups & Restore\n\n- **New: choose how a restore handles posters already on the device.** The\n  restore dialog now offers three modes:\n  - **Reconcile** (default) \u2014 restore the backup's library and clear out\n    leftover posters that aren't part of it.\n  - **Merge** \u2014 keep both the current posters and the restored ones.\n  - **Replace** \u2014 wipe existing posters and restore only the backup's.\n- **Restoring onto a different device now explains the license status.**\n  Licenses are tied to the original device, so a restored license shows as\n  invalid on new hardware \u2014 you'll now see a clear message saying it's\n  registered to a different device and needs reactivating, instead of a bare\n  \"invalid\".\n\n### Installation & Updates\n\n- Fixed a bug where installing or updating on a Raspberry Pi with no Wi-Fi\n  (Ethernet only) could stop before the display service started, leaving the\n  screen offline. Ethernet-only devices now install and start reliably.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.5/htmarquee-1.1.5.tar.gz",
-    "tarball_sha256": "94c866bf57ab4fedfc5da7e7f010d904a3f5f8d8a270aedfd86cd574662d2151",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.5/htmarquee-1.1.5.tar.gz.sig",
-    "size_bytes": 26545359,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.6/htmarquee-1.1.6.tar.gz",
+    "tarball_sha256": "21a9c51e9742631c04a3584266cb5d2a793944b78d18644abc9b24ff7bea233c",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.6/htmarquee-1.1.6.tar.gz.sig",
+    "size_bytes": 26555244,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.1.6",
+      "date": "2026-05-27",
+      "notes": "### Posters\n\n- Missing or corrupted movie posters now re-download automatically in the\n  background, filling in gaps without any manual action.\n\n### Backups & Restore\n\n- **New: choose how a restore handles posters already on the device.** The\n  restore dialog now offers three modes:\n  - **Reconcile** (default) \u2014 restore the backup's library and clear out\n    leftover posters that aren't part of it.\n  - **Merge** \u2014 keep both the current posters and the restored ones.\n  - **Replace** \u2014 wipe existing posters and restore only the backup's.\n- **Restoring onto a different device now explains the license status.**\n  Licenses are tied to the original device, so a restored license shows as\n  invalid on new hardware \u2014 you'll now see a clear message saying it's\n  registered to a different device and needs reactivating, instead of a bare\n  \"invalid\".\n\n### Installation & Updates\n\n- Fixed a bug where installing or updating on a Raspberry Pi with no Wi-Fi\n  (Ethernet only) could stop before the display service started, leaving the\n  screen offline. Ethernet-only devices now install and start reliably."
+    },
     {
       "version": "1.1.5",
       "date": "2026-05-26",
