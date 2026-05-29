@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.1",
-    "released_at": "2026-05-29T19:40:57Z",
-    "changelog": "### Library Repair (new)\n\n- **New: Repair Library** \u2014 htMarquee now self-heals missing posters\n  and backdrops in your library, fixing a long-standing issue where the\n  storage janitor could quietly delete cached image files and leave\n  movies showing blank thumbnails on the marquee and in the web UI.\n  - **Manual button** in Settings \u2192 Maintenance: scan your library and\n    re-download anything missing. Shows live progress and a final\n    \"repaired N / failed N\" summary.\n  - **Automatic after a restore** \u2014 when a backup is restored from\n    another device (or an older backup that didn't capture all\n    images), the repair sweep runs automatically so the screen is full\n    again without you having to do anything.\n  - **Scheduled sweep** \u2014 Off / Daily / Weekly at a configurable hour\n    (default weekly at 4 AM local).\n- **Showtimes self-heal** \u2014 if the Showtimes screen finds a movie\n  without a cached backdrop, it now silently queues a re-download in\n  the background, so the next time that movie appears its backdrop is\n  there.\n- Posters were already self-healing in v1.1.6. Backdrops join now \u2014\n  same TMDB-CDN download path, same atomic write semantics.",
+    "version": "1.2.2",
+    "released_at": "2026-05-29T21:44:39Z",
+    "changelog": "### Showtimes (Premiere)\n\n- **Enable / disable Showtimes** \u2014 a new master switch at the top of\n  the Showtimes settings panel turns the whole feature off without\n  having to delete your scheduled entries. The Showtimes screen stops\n  appearing in the slideshow until you turn it back on.\n- **Cycle backdrops on each appearance** \u2014 a new checkbox on each\n  Showtime entry. When enabled, the Showtimes screen rotates through\n  every available backdrop for that movie (the primary plus every\n  alternate) randomly each time it appears, so the same movie looks\n  fresh across consecutive showings.\n  - Enabling automatically downloads every TMDB backdrop for the movie\n    in the background \u2014 no need to manually pick them one at a time.\n  - Works alongside the existing \"pick a specific backdrop\" picker:\n    leave cycling off for one specific image, turn it on when you want\n    variety.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.1/htmarquee-1.2.1.tar.gz",
-    "tarball_sha256": "6cade28306d601f6a9cff0d771b3970fb4702f055e0e158585b83ed1e0c48933",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.1/htmarquee-1.2.1.tar.gz.sig",
-    "size_bytes": 26950964,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.2/htmarquee-1.2.2.tar.gz",
+    "tarball_sha256": "9e7cae991fcc38341032fec9137d80b7a78b4c646abc6b26fd83d532c32b5903",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.2/htmarquee-1.2.2.tar.gz.sig",
+    "size_bytes": 26956026,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.2",
+      "date": "2026-05-29",
+      "notes": "### Showtimes (Premiere)\n\n- **Enable / disable Showtimes** \u2014 a new master switch at the top of\n  the Showtimes settings panel turns the whole feature off without\n  having to delete your scheduled entries. The Showtimes screen stops\n  appearing in the slideshow until you turn it back on.\n- **Cycle backdrops on each appearance** \u2014 a new checkbox on each\n  Showtime entry. When enabled, the Showtimes screen rotates through\n  every available backdrop for that movie (the primary plus every\n  alternate) randomly each time it appears, so the same movie looks\n  fresh across consecutive showings.\n  - Enabling automatically downloads every TMDB backdrop for the movie\n    in the background \u2014 no need to manually pick them one at a time.\n  - Works alongside the existing \"pick a specific backdrop\" picker:\n    leave cycling off for one specific image, turn it on when you want\n    variety."
+    },
     {
       "version": "1.2.1",
       "date": "2026-05-29",
