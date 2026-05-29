@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.0",
-    "released_at": "2026-05-29T14:33:09Z",
-    "changelog": "### Showtimes (Premiere)\n\n- **New: Showtimes** \u2014 a fullscreen interstitial that announces what's\n  playing soon, perfect for upcoming-features signage in a home theater\n  lobby.\n  - New **Showtimes** tab lists upcoming movies; pick from your library or\n    search TMDB to schedule a movie that isn't cached yet (the system\n    caches it for you).\n  - Each entry is one movie on one date, with up to **three show times**\n    per date.\n  - Up to **four movies per screen**, each on its TMDB backdrop image with\n    slow Ken Burns motion. Title, date, and show times overlay the\n    backdrop in consistent square-cornered badges.\n  - **Auto-arranged layout** \u2014 if there are fewer than four upcoming\n    showings, the screen centers them with a subtle warm bokeh\n    cinema background filling the gaps.\n  - **Configurable header** \u2014 your own text (e.g. \"Playing Soon\",\n    \"Upcoming Features\"), font, color, and size. The header text\n    auto-shrinks if it would overflow at the chosen size.\n  - **Schedule controls** \u2014 choose how often the screen appears\n    (every N posters), how far ahead to look (days), how long it stays\n    on (5\u201330 seconds), and how long after a start time to keep a\n    showing visible.\n  - Movie cards now have an **Add Showtime** button to pre-fill the form\n    for that movie.\n  - Optional: pick an alternate backdrop from TMDB if you prefer a\n    different image for a particular showing.\n- **Library protection** \u2014 movies referenced by a Showtime are protected\n  from being deleted by the library cleaner. Trying to delete such a\n  movie surfaces a clear message listing the blocking Showtimes.",
+    "version": "1.2.1",
+    "released_at": "2026-05-29T19:40:57Z",
+    "changelog": "### Library Repair (new)\n\n- **New: Repair Library** \u2014 htMarquee now self-heals missing posters\n  and backdrops in your library, fixing a long-standing issue where the\n  storage janitor could quietly delete cached image files and leave\n  movies showing blank thumbnails on the marquee and in the web UI.\n  - **Manual button** in Settings \u2192 Maintenance: scan your library and\n    re-download anything missing. Shows live progress and a final\n    \"repaired N / failed N\" summary.\n  - **Automatic after a restore** \u2014 when a backup is restored from\n    another device (or an older backup that didn't capture all\n    images), the repair sweep runs automatically so the screen is full\n    again without you having to do anything.\n  - **Scheduled sweep** \u2014 Off / Daily / Weekly at a configurable hour\n    (default weekly at 4 AM local).\n- **Showtimes self-heal** \u2014 if the Showtimes screen finds a movie\n  without a cached backdrop, it now silently queues a re-download in\n  the background, so the next time that movie appears its backdrop is\n  there.\n- Posters were already self-healing in v1.1.6. Backdrops join now \u2014\n  same TMDB-CDN download path, same atomic write semantics.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.0/htmarquee-1.2.0.tar.gz",
-    "tarball_sha256": "88c103a188c1b81fd73b9b0a40addfd18f71ad0caad04b201a5f13f11a461f08",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.0/htmarquee-1.2.0.tar.gz.sig",
-    "size_bytes": 26890384,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.1/htmarquee-1.2.1.tar.gz",
+    "tarball_sha256": "6cade28306d601f6a9cff0d771b3970fb4702f055e0e158585b83ed1e0c48933",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.1/htmarquee-1.2.1.tar.gz.sig",
+    "size_bytes": 26950964,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.1",
+      "date": "2026-05-29",
+      "notes": "### Library Repair (new)\n\n- **New: Repair Library** \u2014 htMarquee now self-heals missing posters\n  and backdrops in your library, fixing a long-standing issue where the\n  storage janitor could quietly delete cached image files and leave\n  movies showing blank thumbnails on the marquee and in the web UI.\n  - **Manual button** in Settings \u2192 Maintenance: scan your library and\n    re-download anything missing. Shows live progress and a final\n    \"repaired N / failed N\" summary.\n  - **Automatic after a restore** \u2014 when a backup is restored from\n    another device (or an older backup that didn't capture all\n    images), the repair sweep runs automatically so the screen is full\n    again without you having to do anything.\n  - **Scheduled sweep** \u2014 Off / Daily / Weekly at a configurable hour\n    (default weekly at 4 AM local).\n- **Showtimes self-heal** \u2014 if the Showtimes screen finds a movie\n  without a cached backdrop, it now silently queues a re-download in\n  the background, so the next time that movie appears its backdrop is\n  there.\n- Posters were already self-healing in v1.1.6. Backdrops join now \u2014\n  same TMDB-CDN download path, same atomic write semantics."
+    },
     {
       "version": "1.2.0",
       "date": "2026-05-29",
