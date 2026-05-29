@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.1.6",
-    "released_at": "2026-05-27T21:32:58Z",
-    "changelog": "### Posters\n\n- Missing or corrupted movie posters now re-download automatically in the\n  background, filling in gaps without any manual action.\n\n### Backups & Restore\n\n- **New: choose how a restore handles posters already on the device.** The\n  restore dialog now offers three modes:\n  - **Reconcile** (default) \u2014 restore the backup's library and clear out\n    leftover posters that aren't part of it.\n  - **Merge** \u2014 keep both the current posters and the restored ones.\n  - **Replace** \u2014 wipe existing posters and restore only the backup's.\n- **Restoring onto a different device now explains the license status.**\n  Licenses are tied to the original device, so a restored license shows as\n  invalid on new hardware \u2014 you'll now see a clear message saying it's\n  registered to a different device and needs reactivating, instead of a bare\n  \"invalid\".\n\n### Installation & Updates\n\n- Fixed a bug where installing or updating on a Raspberry Pi with no Wi-Fi\n  (Ethernet only) could stop before the display service started, leaving the\n  screen offline. Ethernet-only devices now install and start reliably.",
+    "version": "1.2.0",
+    "released_at": "2026-05-29T14:33:09Z",
+    "changelog": "### Showtimes (Premiere)\n\n- **New: Showtimes** \u2014 a fullscreen interstitial that announces what's\n  playing soon, perfect for upcoming-features signage in a home theater\n  lobby.\n  - New **Showtimes** tab lists upcoming movies; pick from your library or\n    search TMDB to schedule a movie that isn't cached yet (the system\n    caches it for you).\n  - Each entry is one movie on one date, with up to **three show times**\n    per date.\n  - Up to **four movies per screen**, each on its TMDB backdrop image with\n    slow Ken Burns motion. Title, date, and show times overlay the\n    backdrop in consistent square-cornered badges.\n  - **Auto-arranged layout** \u2014 if there are fewer than four upcoming\n    showings, the screen centers them with a subtle warm bokeh\n    cinema background filling the gaps.\n  - **Configurable header** \u2014 your own text (e.g. \"Playing Soon\",\n    \"Upcoming Features\"), font, color, and size. The header text\n    auto-shrinks if it would overflow at the chosen size.\n  - **Schedule controls** \u2014 choose how often the screen appears\n    (every N posters), how far ahead to look (days), how long it stays\n    on (5\u201330 seconds), and how long after a start time to keep a\n    showing visible.\n  - Movie cards now have an **Add Showtime** button to pre-fill the form\n    for that movie.\n  - Optional: pick an alternate backdrop from TMDB if you prefer a\n    different image for a particular showing.\n- **Library protection** \u2014 movies referenced by a Showtime are protected\n  from being deleted by the library cleaner. Trying to delete such a\n  movie surfaces a clear message listing the blocking Showtimes.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.6/htmarquee-1.1.6.tar.gz",
-    "tarball_sha256": "21a9c51e9742631c04a3584266cb5d2a793944b78d18644abc9b24ff7bea233c",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.1.6/htmarquee-1.1.6.tar.gz.sig",
-    "size_bytes": 26555244,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.0/htmarquee-1.2.0.tar.gz",
+    "tarball_sha256": "88c103a188c1b81fd73b9b0a40addfd18f71ad0caad04b201a5f13f11a461f08",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.0/htmarquee-1.2.0.tar.gz.sig",
+    "size_bytes": 26890384,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-05-29",
+      "notes": "### Showtimes (Premiere)\n\n- **New: Showtimes** \u2014 a fullscreen interstitial that announces what's\n  playing soon, perfect for upcoming-features signage in a home theater\n  lobby.\n  - New **Showtimes** tab lists upcoming movies; pick from your library or\n    search TMDB to schedule a movie that isn't cached yet (the system\n    caches it for you).\n  - Each entry is one movie on one date, with up to **three show times**\n    per date.\n  - Up to **four movies per screen**, each on its TMDB backdrop image with\n    slow Ken Burns motion. Title, date, and show times overlay the\n    backdrop in consistent square-cornered badges.\n  - **Auto-arranged layout** \u2014 if there are fewer than four upcoming\n    showings, the screen centers them with a subtle warm bokeh\n    cinema background filling the gaps.\n  - **Configurable header** \u2014 your own text (e.g. \"Playing Soon\",\n    \"Upcoming Features\"), font, color, and size. The header text\n    auto-shrinks if it would overflow at the chosen size.\n  - **Schedule controls** \u2014 choose how often the screen appears\n    (every N posters), how far ahead to look (days), how long it stays\n    on (5\u201330 seconds), and how long after a start time to keep a\n    showing visible.\n  - Movie cards now have an **Add Showtime** button to pre-fill the form\n    for that movie.\n  - Optional: pick an alternate backdrop from TMDB if you prefer a\n    different image for a particular showing.\n- **Library protection** \u2014 movies referenced by a Showtime are protected\n  from being deleted by the library cleaner. Trying to delete such a\n  movie surfaces a clear message listing the blocking Showtimes."
+    },
     {
       "version": "1.1.6",
       "date": "2026-05-27",
