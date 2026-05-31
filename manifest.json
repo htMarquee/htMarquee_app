@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.2",
-    "released_at": "2026-05-29T21:44:39Z",
-    "changelog": "### Showtimes (Premiere)\n\n- **Enable / disable Showtimes** \u2014 a new master switch at the top of\n  the Showtimes settings panel turns the whole feature off without\n  having to delete your scheduled entries. The Showtimes screen stops\n  appearing in the slideshow until you turn it back on.\n- **Cycle backdrops on each appearance** \u2014 a new checkbox on each\n  Showtime entry. When enabled, the Showtimes screen rotates through\n  every available backdrop for that movie (the primary plus every\n  alternate) randomly each time it appears, so the same movie looks\n  fresh across consecutive showings.\n  - Enabling automatically downloads every TMDB backdrop for the movie\n    in the background \u2014 no need to manually pick them one at a time.\n  - Works alongside the existing \"pick a specific backdrop\" picker:\n    leave cycling off for one specific image, turn it on when you want\n    variety.",
+    "version": "1.2.3",
+    "released_at": "2026-05-31T12:54:01Z",
+    "changelog": "### Reliability & Showtimes\n\n- Editing a Showtime no longer silently turns off its \"Cycle backdrops\"\n  setting \u2014 your choice now sticks when you change other fields.\n- Enabling \"Cycle backdrops\" now reliably downloads the movie's alternate\n  backdrops in the background (this had quietly stopped working).\n- Steadier display: slideshow phase updates are no longer occasionally\n  dropped, and playing a video Showtime or slide no longer causes a brief\n  stall.\n- The offline/online indicator and the live update-progress bar now\n  refresh reliably.\n- After a factory reset, a device with a custom name now redirects you to\n  the correct address.\n\n### Security & hardening\n\n- The over-the-air update system now downloads over verified TLS and\n  requires a matching checksum and signature before installing.\n- Tightened the web app, settings, and backup/restore: stricter input\n  validation, tighter TLS private-key permissions, and a size limit that\n  rejects malformed restore archives.\n- Reduced the background service's system privileges.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.2/htmarquee-1.2.2.tar.gz",
-    "tarball_sha256": "9e7cae991fcc38341032fec9137d80b7a78b4c646abc6b26fd83d532c32b5903",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.2/htmarquee-1.2.2.tar.gz.sig",
-    "size_bytes": 26956026,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.3/htmarquee-1.2.3.tar.gz",
+    "tarball_sha256": "45f9aa85ad63d724331fb2cc8068406b3559a59f292e7c0de55efccfd3ba0ec8",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.3/htmarquee-1.2.3.tar.gz.sig",
+    "size_bytes": 26994273,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.3",
+      "date": "2026-05-31",
+      "notes": "### Reliability & Showtimes\n\n- Editing a Showtime no longer silently turns off its \"Cycle backdrops\"\n  setting \u2014 your choice now sticks when you change other fields.\n- Enabling \"Cycle backdrops\" now reliably downloads the movie's alternate\n  backdrops in the background (this had quietly stopped working).\n- Steadier display: slideshow phase updates are no longer occasionally\n  dropped, and playing a video Showtime or slide no longer causes a brief\n  stall.\n- The offline/online indicator and the live update-progress bar now\n  refresh reliably.\n- After a factory reset, a device with a custom name now redirects you to\n  the correct address.\n\n### Security & hardening\n\n- The over-the-air update system now downloads over verified TLS and\n  requires a matching checksum and signature before installing.\n- Tightened the web app, settings, and backup/restore: stricter input\n  validation, tighter TLS private-key permissions, and a size limit that\n  rejects malformed restore archives.\n- Reduced the background service's system privileges."
+    },
     {
       "version": "1.2.2",
       "date": "2026-05-29",
