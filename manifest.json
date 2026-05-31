@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.3",
-    "released_at": "2026-05-31T12:54:01Z",
-    "changelog": "### Reliability & Showtimes\n\n- Editing a Showtime no longer silently turns off its \"Cycle backdrops\"\n  setting \u2014 your choice now sticks when you change other fields.\n- Enabling \"Cycle backdrops\" now reliably downloads the movie's alternate\n  backdrops in the background (this had quietly stopped working).\n- Steadier display: slideshow phase updates are no longer occasionally\n  dropped, and playing a video Showtime or slide no longer causes a brief\n  stall.\n- The offline/online indicator and the live update-progress bar now\n  refresh reliably.\n- After a factory reset, a device with a custom name now redirects you to\n  the correct address.\n\n### Security & hardening\n\n- The over-the-air update system now downloads over verified TLS and\n  requires a matching checksum and signature before installing.\n- Tightened the web app, settings, and backup/restore: stricter input\n  validation, tighter TLS private-key permissions, and a size limit that\n  rejects malformed restore archives.\n- Reduced the background service's system privileges.",
+    "version": "1.2.4",
+    "released_at": "2026-05-31T17:28:29Z",
+    "changelog": "### Showtimes\n\n- With \"Cycle backdrops\" enabled, the Showtimes screen now shows a different\n  backdrop every time it appears \u2014 previously it kept the same one until the\n  next refresh.\n\n### Updates, reliability & security\n\n- More reliable software updates: an update that introduces a new dependency\n  now installs it correctly.\n- Stronger abuse protection on the login, setup, and license screens.\n- Additional hardening of network configuration, dependency versions, and the\n  release build pipeline.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.3/htmarquee-1.2.3.tar.gz",
-    "tarball_sha256": "45f9aa85ad63d724331fb2cc8068406b3559a59f292e7c0de55efccfd3ba0ec8",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.3/htmarquee-1.2.3.tar.gz.sig",
-    "size_bytes": 26994273,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.4/htmarquee-1.2.4.tar.gz",
+    "tarball_sha256": "9d2a2f6406de6484f7899441e4cf574a629bd27eb7d06a429839d6fa411fc1be",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.4/htmarquee-1.2.4.tar.gz.sig",
+    "size_bytes": 26999728,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.4",
+      "date": "2026-05-31",
+      "notes": "### Showtimes\n\n- With \"Cycle backdrops\" enabled, the Showtimes screen now shows a different\n  backdrop every time it appears \u2014 previously it kept the same one until the\n  next refresh.\n\n### Updates, reliability & security\n\n- More reliable software updates: an update that introduces a new dependency\n  now installs it correctly.\n- Stronger abuse protection on the login, setup, and license screens.\n- Additional hardening of network configuration, dependency versions, and the\n  release build pipeline."
+    },
     {
       "version": "1.2.3",
       "date": "2026-05-31",
