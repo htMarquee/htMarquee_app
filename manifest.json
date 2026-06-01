@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.4",
-    "released_at": "2026-05-31T17:28:29Z",
-    "changelog": "### Showtimes\n\n- With \"Cycle backdrops\" enabled, the Showtimes screen now shows a different\n  backdrop every time it appears \u2014 previously it kept the same one until the\n  next refresh.\n\n### Updates, reliability & security\n\n- More reliable software updates: an update that introduces a new dependency\n  now installs it correctly.\n- Stronger abuse protection on the login, setup, and license screens.\n- Additional hardening of network configuration, dependency versions, and the\n  release build pipeline.",
+    "version": "1.2.5",
+    "released_at": "2026-06-01T18:43:21Z",
+    "changelog": "### Showtimes\n\n- The per-showing backdrop option is now labeled \"Show a random backdrop each\n  time\" (previously \"Cycle backdrops\") so its effect is clearer.\n\n### Reliability\n\n- Software updates now apply automatically after you install them \u2014 previously an\n  update could finish staging but not take effect until a manual restart.\n- The \"update available\" prompt now shows and clears reliably.\n- TV power and input status (HDMI-CEC) now update reliably in the web app.\n- More robust trailer downloads.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.4/htmarquee-1.2.4.tar.gz",
-    "tarball_sha256": "9d2a2f6406de6484f7899441e4cf574a629bd27eb7d06a429839d6fa411fc1be",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.4/htmarquee-1.2.4.tar.gz.sig",
-    "size_bytes": 26999728,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5/htmarquee-1.2.5.tar.gz",
+    "tarball_sha256": "88e89163e3305bfb943518152588651bb1dfd6cd9c800219feeb09261093692e",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5/htmarquee-1.2.5.tar.gz.sig",
+    "size_bytes": 27002353,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.5",
+      "date": "2026-06-01",
+      "notes": "### Showtimes\n\n- The per-showing backdrop option is now labeled \"Show a random backdrop each\n  time\" (previously \"Cycle backdrops\") so its effect is clearer.\n\n### Reliability\n\n- Software updates now apply automatically after you install them \u2014 previously an\n  update could finish staging but not take effect until a manual restart.\n- The \"update available\" prompt now shows and clears reliably.\n- TV power and input status (HDMI-CEC) now update reliably in the web app.\n- More robust trailer downloads."
+    },
     {
       "version": "1.2.4",
       "date": "2026-05-31",
