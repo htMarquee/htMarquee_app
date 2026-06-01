@@ -1,0 +1,335 @@
+{
+  "latest": {
+    "version": "1.2.5rc1",
+    "released_at": "2026-06-01T15:26:47Z",
+    "changelog": "### Showtimes\n\n- The per-showing backdrop option is now labeled \"Show a random backdrop each\n  time\" (previously \"Cycle backdrops\") so its effect is clearer.\n\n### Reliability\n\n- TV power and input status (HDMI-CEC) now update reliably in the web app.\n- More robust trailer downloads.",
+    "min_version": "0.0.1",
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5rc1/htmarquee-1.2.5rc1.tar.gz",
+    "tarball_sha256": "d2af5d29e518d4af3d2342a44e12e84403337945d5cfb6764e1a63dcd58eb85d",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5rc1/htmarquee-1.2.5rc1.tar.gz.sig",
+    "size_bytes": 27001930,
+    "requires_restart": true
+  },
+  "releases": [
+    {
+      "version": "1.2.5rc1",
+      "date": "2026-06-01",
+      "notes": "### Showtimes\n\n- The per-showing backdrop option is now labeled \"Show a random backdrop each\n  time\" (previously \"Cycle backdrops\") so its effect is clearer.\n\n### Reliability\n\n- TV power and input status (HDMI-CEC) now update reliably in the web app.\n- More robust trailer downloads."
+    },
+    {
+      "version": "1.2.4",
+      "date": "2026-05-31",
+      "notes": "### Showtimes\n\n- With \"Cycle backdrops\" enabled, the Showtimes screen now shows a different\n  backdrop every time it appears \u2014 previously it kept the same one until the\n  next refresh.\n\n### Updates, reliability & security\n\n- More reliable software updates: an update that introduces a new dependency\n  now installs it correctly.\n- Stronger abuse protection on the login, setup, and license screens.\n- Additional hardening of network configuration, dependency versions, and the\n  release build pipeline."
+    },
+    {
+      "version": "1.2.3",
+      "date": "2026-05-31",
+      "notes": "### Reliability & Showtimes\n\n- Editing a Showtime no longer silently turns off its \"Cycle backdrops\"\n  setting \u2014 your choice now sticks when you change other fields.\n- Enabling \"Cycle backdrops\" now reliably downloads the movie's alternate\n  backdrops in the background (this had quietly stopped working).\n- Steadier display: slideshow phase updates are no longer occasionally\n  dropped, and playing a video Showtime or slide no longer causes a brief\n  stall.\n- The offline/online indicator and the live update-progress bar now\n  refresh reliably.\n- After a factory reset, a device with a custom name now redirects you to\n  the correct address.\n\n### Security & hardening\n\n- The over-the-air update system now downloads over verified TLS and\n  requires a matching checksum and signature before installing.\n- Tightened the web app, settings, and backup/restore: stricter input\n  validation, tighter TLS private-key permissions, and a size limit that\n  rejects malformed restore archives.\n- Reduced the background service's system privileges."
+    },
+    {
+      "version": "1.2.2",
+      "date": "2026-05-29",
+      "notes": "### Showtimes (Premiere)\n\n- **Enable / disable Showtimes** \u2014 a new master switch at the top of\n  the Showtimes settings panel turns the whole feature off without\n  having to delete your scheduled entries. The Showtimes screen stops\n  appearing in the slideshow until you turn it back on.\n- **Cycle backdrops on each appearance** \u2014 a new checkbox on each\n  Showtime entry. When enabled, the Showtimes screen rotates through\n  every available backdrop for that movie (the primary plus every\n  alternate) randomly each time it appears, so the same movie looks\n  fresh across consecutive showings.\n  - Enabling automatically downloads every TMDB backdrop for the movie\n    in the background \u2014 no need to manually pick them one at a time.\n  - Works alongside the existing \"pick a specific backdrop\" picker:\n    leave cycling off for one specific image, turn it on when you want\n    variety."
+    },
+    {
+      "version": "1.2.1",
+      "date": "2026-05-29",
+      "notes": "### Library Repair (new)\n\n- **New: Repair Library** \u2014 htMarquee now self-heals missing posters\n  and backdrops in your library, fixing a long-standing issue where the\n  storage janitor could quietly delete cached image files and leave\n  movies showing blank thumbnails on the marquee and in the web UI.\n  - **Manual button** in Settings \u2192 Maintenance: scan your library and\n    re-download anything missing. Shows live progress and a final\n    \"repaired N / failed N\" summary.\n  - **Automatic after a restore** \u2014 when a backup is restored from\n    another device (or an older backup that didn't capture all\n    images), the repair sweep runs automatically so the screen is full\n    again without you having to do anything.\n  - **Scheduled sweep** \u2014 Off / Daily / Weekly at a configurable hour\n    (default weekly at 4 AM local).\n- **Showtimes self-heal** \u2014 if the Showtimes screen finds a movie\n  without a cached backdrop, it now silently queues a re-download in\n  the background, so the next time that movie appears its backdrop is\n  there.\n- Posters were already self-healing in v1.1.6. Backdrops join now \u2014\n  same TMDB-CDN download path, same atomic write semantics."
+    },
+    {
+      "version": "1.2.0",
+      "date": "2026-05-29",
+      "notes": "### Showtimes (Premiere)\n\n- **New: Showtimes** \u2014 a fullscreen interstitial that announces what's\n  playing soon, perfect for upcoming-features signage in a home theater\n  lobby.\n  - New **Showtimes** tab lists upcoming movies; pick from your library or\n    search TMDB to schedule a movie that isn't cached yet (the system\n    caches it for you).\n  - Each entry is one movie on one date, with up to **three show times**\n    per date.\n  - Up to **four movies per screen**, each on its TMDB backdrop image with\n    slow Ken Burns motion. Title, date, and show times overlay the\n    backdrop in consistent square-cornered badges.\n  - **Auto-arranged layout** \u2014 if there are fewer than four upcoming\n    showings, the screen centers them with a subtle warm bokeh\n    cinema background filling the gaps.\n  - **Configurable header** \u2014 your own text (e.g. \"Playing Soon\",\n    \"Upcoming Features\"), font, color, and size. The header text\n    auto-shrinks if it would overflow at the chosen size.\n  - **Schedule controls** \u2014 choose how often the screen appears\n    (every N posters), how far ahead to look (days), how long it stays\n    on (5\u201330 seconds), and how long after a start time to keep a\n    showing visible.\n  - Movie cards now have an **Add Showtime** button to pre-fill the form\n    for that movie.\n  - Optional: pick an alternate backdrop from TMDB if you prefer a\n    different image for a particular showing.\n- **Library protection** \u2014 movies referenced by a Showtime are protected\n  from being deleted by the library cleaner. Trying to delete such a\n  movie surfaces a clear message listing the blocking Showtimes."
+    },
+    {
+      "version": "1.1.6",
+      "date": "2026-05-27",
+      "notes": "### Posters\n\n- Missing or corrupted movie posters now re-download automatically in the\n  background, filling in gaps without any manual action.\n\n### Backups & Restore\n\n- **New: choose how a restore handles posters already on the device.** The\n  restore dialog now offers three modes:\n  - **Reconcile** (default) \u2014 restore the backup's library and clear out\n    leftover posters that aren't part of it.\n  - **Merge** \u2014 keep both the current posters and the restored ones.\n  - **Replace** \u2014 wipe existing posters and restore only the backup's.\n- **Restoring onto a different device now explains the license status.**\n  Licenses are tied to the original device, so a restored license shows as\n  invalid on new hardware \u2014 you'll now see a clear message saying it's\n  registered to a different device and needs reactivating, instead of a bare\n  \"invalid\".\n\n### Installation & Updates\n\n- Fixed a bug where installing or updating on a Raspberry Pi with no Wi-Fi\n  (Ethernet only) could stop before the display service started, leaving the\n  screen offline. Ethernet-only devices now install and start reliably."
+    },
+    {
+      "version": "1.1.5",
+      "date": "2026-05-26",
+      "notes": "### Backups & Restore\n\n- **Fixed a data-loss bug during restore.** A large backup could briefly fill\n  enough of the SD card that the automatic storage cleanup kicked in and deleted\n  cached movies mid-restore \u2014 on one cross-device restore it removed 112 of 276\n  movies. Restores now pause the cleanup until they finish, don't count the\n  in-progress backup file against free space, and protect just-restored movies\n  from eviction.\n- **Restoring onto a different device no longer changes that device's network\n  settings \u2014 unless you want it to.** The restore dialog's \"Keep current network\n  settings\" option (on by default) now genuinely preserves the target's IP,\n  hostname, and mDNS name; before, it could silently leave them overwritten by\n  the backup. Unchecking it still restores the backup's network settings \u2014 the\n  right choice when replacing a dead device with an identical one.\n- **Restore now checks free space first** and refuses with a clear message if the\n  backup won't fit, instead of starting and failing partway through.\n- Restoring a backup now ends with a clear \"Restart Required\" modal \u2014 one click\n  restarts the server to finish applying any schema migrations added since the\n  backup was taken.\n- Restore and update progress now update reliably in the web UI while work is in\n  progress."
+    },
+    {
+      "version": "1.1.4",
+      "date": "2026-05-24",
+      "notes": "### Display\n\n- \"Now Showing\" on the dashboard now shows each movie's tagline instead of repeating the display banner text under every title.\n- Fixed the time countdown and \"ends at\" text being cut off at the screen edge during Jellyfin/Plex playback \u2014 they're now inset from the edge.\n- Fixed the tagline overlapping the \"ends 12:07 PM\" text on Jellyfin/Plex playback. The tagline now truncates with an ellipsis when it would collide with the side time text, and renders at full opacity once visible.\n- Fixed the \"Use as App Theme\" button on a movie card doing nothing.\n\n### Trailers\n\n- Added a \"Re-detect black bars\" button under Settings \u2192 Trailers to re-evaluate every cached trailer's letterboxing. Useful when trailers slipped through the initial detection.\n- Fixed black-bar detection on Debian Trixie \u2014 the ffmpeg 7 cropdetect filter needed more sample frames than the older pipeline gave it, so many trailers were silently passing through with bars intact. After installing the update, re-run \"Re-detect black bars\" once to fix existing trailers.\n- Custom YouTube trailer downloads now report real success or failure. Previously, clicking \"Download\" on a pasted YouTube URL showed \"Downloading custom trailer...\" and that was the last you'd hear about it \u2014 there was no follow-up if the download actually finished or failed. Now you get a clear toast within ~30 seconds: a success message with the trailer duration, or an explanation if the video was unavailable / age-restricted / otherwise broken.\n- Fixed \"orphan trailer file\" bug where a service restart in the narrow window between yt-dlp finishing a download and the DB commit could leave a fully-downloaded trailer file invisible to the app forever. The boot-time reconciliation now finds these orphans on every restart and links them back to the movie automatically (previously only resynced files for movies that already thought they had a trailer).\n\n### Storage & performance\n\n- Storage Janitor now defaults its cleanup thresholds to 51% of the SD card on a fresh install, so a full system backup always fits on the same card.\n- Backend memory usage dropped by ~450 MB at idle. On 2 GB Pi hardware this keeps the system comfortably below the OOM line even during heavy trailer-processing bursts.\n- **Fixed a data-loss bug** where the Storage Janitor would evict cached movies to \"free up disk space\" that was actually a user-created backup file. A 13 GB backup ZIP could trigger eviction of 100+ movies as collateral damage. The janitor now correctly excludes the backups directory from the disk-pressure calculation, and the Storage UI shows backup file size as its own category so you can see what's actually using disk.\n\n### Library\n\n- Movie lists now sort library-style: a leading \"The\", \"A\", or \"An\" is ignored when alphabetizing. *The Dark Knight* sorts under D, *An American Tail* under A(merican), etc. The full title still displays unchanged. Existing libraries get the new sort order automatically on update \u2014 no rebuild needed.\n\n### Settings & Now-Cache UI\n\n- Custom banner text now shows a live \"N / 50\" character counter that turns amber past 28 characters.\n- Banner auto-fits font size to the message only when the message or font actually changes \u2014 manual slider tweaks are no longer overwritten on the next save.\n- Better defaults for the trailer overlay: 12.5% vertical offset and 25% poster opacity during trailer playback.\n- The Display Poster Resolution dropdown no longer loads blank on first open.\n- Auto-cache defaults lowered to 5/day and 20 total (was 20/100) so the system uses less network bandwidth out of the box.\n- Cache tab: genre chips no longer jammed against the movie grid (now spaced like the Discover tab), and the sort / rating / \"favorites only\" filters work again.\n- Format-badge assign and delete buttons work again.\n- Setting a preferred poster on a movie immediately updates the movie card image, not just the display.\n\n### Integrations & auth\n\n- HDMI-CEC enable toggle now shows a \"Requires restart\" hint and prompts you to restart immediately when you turn it on (instead of leaving the change in an \"applied later\" limbo).\n- HTTPS\u2194HTTP protocol toggle no longer leaves you stuck on a login loop after the server restart.\n- Matinee tier's 50-movie cap now shows a clear cap message instead of logging you out when you try to add the 51st.\n- Pause-timeout setting (under Integrations) and the whole Playback Behavior section are now properly gated behind a Premiere license.\n- License page redirect text fixed: \"redirected to the htMarquee website\" (was \"Lemon Squeezy\").\n- License-request: now shown inline with Copy + Download buttons in a dark monospace box, sized to its content.\n- Cert upload validates the uploaded cert against the existing private key before applying \u2014 gives specific error messages instead of a generic failure when the cert and key don't match.\n\n### Hostname & network identity\n\n- The setup wizard now has a \"Pick a Name\" step that lets you choose this device's network name (e.g. `htmarquee-livingroom.local`) instead of the default `htmarquee.local`. If another htMarquee is already on your network, the wizard warns you so you can pick something unique.\n- Settings \u2192 Environment now shows a live availability check next to the mDNS Hostname and System Hostname fields \u2014 if the name you type is already claimed by another device on the LAN, you'll see a warning with the conflicting IP, but you can still save (useful when replacing an existing device).\n- Hostname changes require a restart to take effect, same as port/HTTPS changes. The Settings UI prompts for the restart automatically.\n- Fixed timezone and NTP-server changes silently not taking effect \u2014 the saved value was persisted but never applied to the OS clock until the next service restart, with no prompt. These now correctly trigger the \"Restart required\" banner like other env-config fields.\n\n### Hardware\n\n- Fixed CEC quick-panel buttons firing N times after switching tabs N times."
+    },
+    {
+      "version": "1.1.3",
+      "date": "2026-05-18",
+      "notes": "### Display\n\n- \"Now Showing\" on the dashboard now shows each movie's tagline instead of repeating the display banner text under every title.\n- Fixed the time countdown and \"ends at\" text being cut off at the screen edge during Jellyfin/Plex playback \u2014 they're now inset from the edge.\n- Fixed the tagline overlapping the \"ends 12:07 PM\" text on Jellyfin/Plex playback. The tagline now truncates with an ellipsis when it would collide with the side time text, and renders at full opacity once visible.\n- Fixed the \"Use as App Theme\" button on a movie card doing nothing.\n\n### Trailers\n\n- Added a \"Re-detect black bars\" button under Settings \u2192 Trailers to re-evaluate every cached trailer's letterboxing. Useful when trailers slipped through the initial detection.\n- Fixed black-bar detection on Debian Trixie \u2014 the ffmpeg 7 cropdetect filter needed more sample frames than the older pipeline gave it, so many trailers were silently passing through with bars intact. After installing the update, re-run \"Re-detect black bars\" once to fix existing trailers.\n\n### Storage & performance\n\n- Storage Janitor now defaults its cleanup thresholds to 51% of the SD card on a fresh install, so a full system backup always fits on the same card.\n- Backend memory usage dropped by ~450 MB at idle. On 2 GB Pi hardware this keeps the system comfortably below the OOM line even during heavy trailer-processing bursts.\n\n### Settings & Now-Cache UI\n\n- Custom banner text now shows a live \"N / 50\" character counter that turns amber past 28 characters.\n- Banner auto-fits font size to the message only when the message or font actually changes \u2014 manual slider tweaks are no longer overwritten on the next save.\n- Better defaults for the trailer overlay: 12.5% vertical offset and 25% poster opacity during trailer playback.\n- The Display Poster Resolution dropdown no longer loads blank on first open.\n- Auto-cache defaults lowered to 5/day and 20 total (was 20/100) so the system uses less network bandwidth out of the box.\n- Cache tab: genre chips no longer jammed against the movie grid (now spaced like the Discover tab), and the sort / rating / \"favorites only\" filters work again.\n- Format-badge assign and delete buttons work again.\n- Setting a preferred poster on a movie immediately updates the movie card image, not just the display.\n\n### Integrations & auth\n\n- HDMI-CEC enable toggle now shows a \"Requires restart\" hint and prompts you to restart immediately when you turn it on (instead of leaving the change in an \"applied later\" limbo).\n- HTTPS\u2194HTTP protocol toggle no longer leaves you stuck on a login loop after the server restart.\n- Matinee tier's 50-movie cap now shows a clear cap message instead of logging you out when you try to add the 51st.\n- Pause-timeout setting (under Integrations) and the whole Playback Behavior section are now properly gated behind a Premiere license.\n- License page redirect text fixed: \"redirected to the htMarquee website\" (was \"Lemon Squeezy\").\n- License-request: now shown inline with Copy + Download buttons in a dark monospace box, sized to its content.\n- Cert upload validates the uploaded cert against the existing private key before applying \u2014 gives specific error messages instead of a generic failure when the cert and key don't match.\n\n### Hardware\n\n- Fixed CEC quick-panel buttons firing N times after switching tabs N times."
+    },
+    {
+      "version": "1.1.2",
+      "date": "2026-05-13",
+      "notes": "### Under the hood\n\n- Substantial internal cleanup of the backend codebase. Feature routes moved into per-feature folders, startup logic extracted from main.py into a separate bootstrap module, and new pre-flight checks added so future releases catch obfuscation regressions sooner. No user-visible changes."
+    },
+    {
+      "version": "1.1.1",
+      "date": "2026-05-12",
+      "notes": "### Reliability\n\n- Fixes fresh installs from htmarquee.com. The v1.1.0 release tarball was missing the bundled installer, so first-time installs failed partway through. Existing systems updating via OTA were not affected."
+    },
+    {
+      "version": "1.1.0",
+      "date": "2026-05-12",
+      "notes": "### Reliability\n\n- OTA updates run in a separate background service. Update installs survive crashes or freezes that would previously have left the Pi in a half-installed state.\n- Restoring backups is much more reliable, even very large ones. The restore pipeline runs in its own background service with isolated memory, so a heavy restore can't take down the rest of the Pi.\n- The Restore-from-backup page now handles very large backups (8GB+) directly from the browser. The upload is automatically split into chunks so memory stays bounded regardless of backup size, and a single failed chunk retries instead of restarting the whole upload.\n- Settings saves are faster and no longer collide with each other.\n\n### Behind the scenes\n\n- Significant internal restructuring for long-term maintainability."
+    },
+    {
+      "version": "1.0.62",
+      "date": "2026-05-12",
+      "notes": "### Behind the scenes\n\n- **Frontend modularization completed.** The remaining feature code\n  in the main `app.js` script \u2014 settings tabs, hardware controls,\n  environment config, backup/restore, cache management, dashboard,\n  and more \u2014 moved into dedicated per-feature modules. No user-visible\n  change; the page loads and behaves identically."
+    },
+    {
+      "version": "1.0.61",
+      "date": "2026-05-11",
+      "notes": "### Fixes\n\n- **Cleaner cache deletion.** Removing a cached movie \u2014 through the\n  \"Delete from cache\" button, the broken-cache cleanup, or the\n  block-a-movie flow \u2014 now also removes the movie's trailer metadata\n  rows and any extra trailer variants the \"Download All\" button had\n  previously downloaded. Before this fix, those entries were\n  orphaned in the database and on disk.\n\n- **Demo content survives reinstall.** If you deprovision and\n  reinstall, the shipped demo movie (Big Buck Bunny) and demo slide\n  now come back correctly. Previously the seed markers in the\n  preserved data directory caused the seeder to skip, leaving\n  orphaned media on disk.\n\n### Behind the scenes\n\n- **Frontend modularization continued.** Internal frontend modules\n  now communicate exclusively through ES module imports \u2014 the last\n  cross-feature `window.X` bridges between modules were retired.\n  No user-visible change."
+    },
+    {
+      "version": "1.0.59",
+      "date": "2026-05-07",
+      "notes": "### Behind the scenes\n\n- **Architecture cleanup, continued.** Settings saves now use per-key\n  locks, removing a class of sporadic \"database is locked\" errors when\n  multiple settings change at once. Internal websocket and\n  state-machine contracts were tightened. No user-facing changes this\n  release."
+    },
+    {
+      "version": "1.0.58",
+      "date": "2026-05-07",
+      "notes": "### Behind the scenes\n\n- **Internal architecture cleanup.** Foundations for the next batch of\n  features: a typed event bus, a declarative settings registry, and the\n  start of frontend modularization. No user-facing changes this release."
+    },
+    {
+      "version": "1.0.56",
+      "date": "2026-05-02",
+      "notes": "### Fixes\n\n- **Backups now capture the database accurately.** Previously a small\n  number of recent changes could be missing from a backup, causing\n  subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi\n  keeps your Premiere tier intact without re-uploading the license.\n- **Trailer black-bar removal handles longer trailers reliably.**\n  Previously trailers around three minutes or more could time out during\n  analysis and skip the auto-crop step.\n- **Variable-aspect trailers preserve their full image.** Modern trailers\n  that shift aspect ratio mid-clip (IMAX expansion, anamorphic sequences)\n  no longer get over-cropped \u2014 when the aspect varies, the crop is\n  skipped or kept conservative so nothing important gets cut off.\n- **Animated movie posters no longer flash to static before the next\n  movie.** Previously, when an animated poster cycled to the next movie,\n  the marquee briefly showed the static version of the same poster\n  before the transition. The animated frame now holds smoothly through\n  the crossfade."
+    },
+    {
+      "version": "1.0.55",
+      "date": "2026-04-29",
+      "notes": "### Fixes\n- **Backups now capture the database accurately.** Previously a small number of recent changes could be missing from a backup, causing subtle inconsistencies after restore.\n- **Backups now include the license file.** Restoring on a fresh Pi keeps your Premiere tier intact without re-uploading the license."
+    },
+    {
+      "version": "1.0.53",
+      "date": "2026-04-29",
+      "notes": "### Fixes\n- **Self-healing posters.** When a movie's poster file is missing, the slideshow skips that movie cleanly (no blank frame) and re-downloads the poster in the background. The repaired poster appears on the next rotation.\n- **Boot-time poster check.** On startup, htMarquee verifies every cached movie's poster file is present and re-downloads any that are missing."
+    },
+    {
+      "version": "1.0.51",
+      "date": "2026-04-28",
+      "notes": "### Fixes\n- **HTTP \u21c4 HTTPS protocol switch race:** toggling Enable HTTPS and clicking Restart no longer lands on \"connection refused\". The page now waits for the server to be fully ready before reloading on the new protocol."
+    },
+    {
+      "version": "1.0.50",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- Fix first-time backup failing on fresh installs."
+    },
+    {
+      "version": "1.0.49",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- A/B slot OTA updates no longer risk losing your data, settings, or license. Fresh v1.0.49 installs get the correct layout automatically; existing installs are migrated on the next install or update."
+    },
+    {
+      "version": "1.0.48",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- \"Failed to configure A/B slot mode\" error during in-app updates is fixed. If you hit this on v1.0.47 or earlier, re-run the install command to recover:\n\n  `curl -sSL https://htmarquee.com/install.sh | sudo bash`"
+    },
+    {
+      "version": "1.0.47",
+      "date": "2026-04-24",
+      "notes": "### Fixes\n- **Toggling \"Enable HTTPS\" no longer locks you out.** The save action now prompts \"Restart now?\" and reloads the page on whichever protocol the server comes back up on.\n- **Switching auth mode (PIN \u2194 Password) now prompts for a fresh credential** before saving. Previously the old credential was silently reused under the new mode.\n- **Changing auth mode signs you out and rotates the session.** Open tabs and stale cookies can't keep acting under the old credential.\n- **Switching auth mode to \"None\" shows a security confirmation** before stripping authentication.\n- **Network changes** (IP, hostname, DHCP, NTP) now offer an immediate \"Restart now?\" button when the change requires a service restart."
+    },
+    {
+      "version": "1.0.46",
+      "date": "2026-04-23",
+      "notes": "### New\n- Fresh installs now ship with a Big Buck Bunny demo poster and trailer so the display has working content immediately, even before a TMDB API key is set.\n- Default interstitial slide that plays every 10 posters \u2014 always enabled.\n- Plex and Jellyfin playback banners can now be independently shown/hidden and have their own font color pickers.\n- Playback banner text is auto-fit to keep long strings on-screen.\n\n### Fixes\n- Theater Badges \"Generate\" button no longer triggers an accidental settings save.\n- Enabling Plex or Jellyfin immediately after entering a server URL now works.\n- Adding a TMDB API key on a fresh install correctly triggers the initial cache seed."
+    },
+    {
+      "version": "1.0.45",
+      "date": "2026-04-20",
+      "notes": "### New\n- Plex and Jellyfin integrations now have enable/disable checkboxes that gate webhook processing.\n- Animated theater marquee banner with chasing lights during fresh install and provisioning.\n\n### Improvements\n- Movie cards now show your preferred poster when one is set."
+    },
+    {
+      "version": "1.0.44",
+      "date": "2026-04-18",
+      "notes": "### New\n- Animated theater marquee banner with chasing lights during fresh install and provisioning.\n\n### Improvements\n- Movie cards now show your preferred poster when one is set."
+    },
+    {
+      "version": "1.0.43",
+      "date": "2026-04-18",
+      "notes": "### Improvements\n- Movie cards now show your preferred poster when one is set."
+    },
+    {
+      "version": "1.0.42",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix \"TV Status Unknown\" flickering on the dashboard. Now keeps the last known good status and only shows \"unknown\" after 3 consecutive failures.\n\n### Improvements\n- CEC status updates faster after sending power commands."
+    },
+    {
+      "version": "1.0.41",
+      "date": "2026-04-17",
+      "notes": "### Improvements\n- CEC status updates faster after sending power commands."
+    },
+    {
+      "version": "1.0.40",
+      "date": "2026-04-17",
+      "notes": "### New: Live CEC TV Status Monitor\n- TV power status now updates automatically \u2014 no more stale \"TV is Off\" after sending power commands.\n- Dashboard TV Control panel now shows transition states (\"TV Turning On...\" / \"TV Turning Off...\"), TV name and HDMI port, and an active source indicator."
+    },
+    {
+      "version": "1.0.39",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions.\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of the display cycle.\n- Poster display time minimum lowered from 5 to 3 seconds."
+    },
+    {
+      "version": "1.0.38",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions.\n\n### Improvements\n- Animated posters now fade out smoothly over the last 1 second of the display cycle."
+    },
+    {
+      "version": "1.0.37",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions."
+    },
+    {
+      "version": "1.0.36",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Revert animated poster display changes from v1.0.33-v1.0.35."
+    },
+    {
+      "version": "1.0.35",
+      "date": "2026-04-17",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n\n### Improvements\n- Animated posters now use the same rendering pipeline as static posters: transitions apply correctly when entering and leaving an animated poster, video loops seamlessly, and timing is consistent."
+    },
+    {
+      "version": "1.0.34",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters flashing to the static poster during transitions."
+    },
+    {
+      "version": "1.0.33",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix Spotlight (manual) mode getting permanently stuck on a movie.\n- Fix animated posters only playing once before reverting to the static poster."
+    },
+    {
+      "version": "1.0.32",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix banner text overflowing when Plex or Jellyfin playback starts \u2014 the banner font size is now recalculated to fit.\n- Fix webhook URL copy button failing on HTTP connections.\n- Fix ACTIVE banner hardcoded to \"Now Playing\" instead of using your configured banner text.\n\n### Improvements\n- Integration banner font is now sent to the display when playback starts and restored to the idle font when playback stops."
+    },
+    {
+      "version": "1.0.31",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix kiosk display not restarting after OTA update."
+    },
+    {
+      "version": "1.0.30",
+      "date": "2026-04-16",
+      "notes": "### Fixes\n- Fix info row icons blinking when display settings change.\n\n### Improvements\n- Bump default banner font size from 3vh to 6vh for better visibility on fresh installs.\n- Restart kiosk display automatically during OTA update so updated display code takes effect without manual intervention."
+    },
+    {
+      "version": "1.0.29",
+      "date": "2026-04-16",
+      "notes": "### Improvements\n- Format badge icons (Dolby Atmos, DTS:X, etc.) are now vertically centered on the info row."
+    },
+    {
+      "version": "1.0.28",
+      "date": "2026-04-13",
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
+    },
+    {
+      "version": "1.0.27",
+      "date": "2026-04-13",
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
+    },
+    {
+      "version": "1.0.26",
+      "date": "2026-04-13",
+      "notes": "### New\n- In-app \"Upgrade to Premiere\" flow for Matinee users \u2014 select a plan, enter your email, and check out directly from the License tab.\n\n### Improvements\n- Removed hardcoded default PIN from fresh installs (first-run setup is now required)."
+    },
+    {
+      "version": "1.0.25",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded code protection coverage."
+    },
+    {
+      "version": "1.0.24",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded code protection coverage to the FastAPI entry point and the kiosk display renderer."
+    },
+    {
+      "version": "1.0.23",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded code protection coverage to the auth and license route handlers."
+    },
+    {
+      "version": "1.0.22",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded code protection coverage to the API clients and route handlers, including the bcrypt/JWT auth helpers."
+    },
+    {
+      "version": "1.0.21",
+      "date": "2026-04-10",
+      "notes": "### Security\n- Expanded code protection coverage. Tier quota and slideshow logic are no longer readable in plain text."
+    },
+    {
+      "version": "1.0.20",
+      "date": "2026-04-09",
+      "notes": "### Improvements\n- Public release tarball trimmed to only the files needed to run the app."
+    },
+    {
+      "version": "1.0.19",
+      "date": "2026-04-09",
+      "notes": "### Fixes\n- Fix login prompt incorrectly appearing on the Hardware tab for Matinee users.\n- Fix release notes not appearing for the current version after a fresh install.\n- Fix fresh-install crash on ethernet-only Pi.\n- Fix service crash on fresh install (no A/B slots).\n\n### Improvements\n- Manifest URL field is now read-only by default with an Edit/Lock toggle.\n- Backend validates manifest URL before saving."
+    },
+    {
+      "version": "1.0.18",
+      "date": "2026-04-09",
+      "notes": "### Fixes\n- Fix fresh-install crash on ethernet-only Pi.\n- Fix service startup failure on fresh install.\n- Fix deprovision when the display process is still running.\n- Web installer now correctly runs full provisioning on a fresh Pi.\n\n### New\n- Added deprovision script for complete htMarquee removal (supports `--dry-run` and `--full`)."
+    },
+    {
+      "version": "1.0.17",
+      "date": "2026-04-09",
+      "notes": "### New\n- Web install script for `curl | bash` installs from htmarquee.com.\n\n### Fixes\n- Font size and color now survive reboots, service restarts, and system refresh.\n- Sudoers entry for OTA updates added to the install script.\n- Migrated old manifest URL to the new public location for existing installations."
+    },
+    {
+      "version": "1.0.16",
+      "date": "2026-04-08",
+      "notes": "### New\n- Adjustable banner font size with a slider (1.0\u20138.0vh range).\n- Banner font color picker \u2014 choose any color for the header text.\n- Public update distribution \u2014 all Pis now pull updates from the public manifest."
+    },
+    {
+      "version": "1.0.15",
+      "date": "2026-04-08",
+      "notes": "### New\n- Customizable banner fonts for the display header, with 8 built-in Google Fonts (Audiowide, Barlow Condensed, Bitcount Grid Double, Doto, Geo, Monoton, Sixtyfour, Zen Tokyo Zoo).\n- Upload custom .ttf/.otf/.woff/.woff2 font files for the banner.\n- Separate font selection for idle, Plex, and Jellyfin playback banners.\n- Font changes hot-apply via WebSocket \u2014 no restart needed.\n- Release notes now displayed in the Software Update section, with expandable history.\n\n### Fixes\n- Rollback progress bar now advances instead of staying stuck at 0%.\n- Rollback button is grayed out when no previous version is available."
+    },
+    {
+      "version": "1.0.14",
+      "date": "2026-04-07",
+      "notes": "### Fixes\n- LED off now clears the entire strip regardless of configured count.\n- Fixed OTA slot cleanup permission errors."
+    },
+    {
+      "version": "1.0.13",
+      "date": "2026-04-07",
+      "notes": "### Fixes\n- Fixed LED sections not graying out when GPIO is disabled.\n- OTA updates now install Pi-specific dependencies automatically."
+    },
+    {
+      "version": "1.0.12",
+      "date": "2026-04-07",
+      "notes": "### LED Strip Control\n- LED Strip Control grays out when GPIO is disabled.\n- GPIO toggle shows a restart prompt with a one-click restart button.\n- Added a GPIO pinout diagram to hardware settings."
+    },
+    {
+      "version": "1.0.11",
+      "date": "2026-04-05",
+      "notes": "### Fixes\n- Fix license tier detection \u2014 the UI no longer shows Matinee locks with a valid Premiere license."
+    },
+    {
+      "version": "1.0.9",
+      "date": "2026-04-05",
+      "notes": "### Security\n- Improved license code protection."
+    },
+    {
+      "version": "1.0.5",
+      "date": "2026-04-03",
+      "notes": "### Fixes\n- The app now correctly reports its release version instead of always showing v1.0.0."
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-04-03",
+      "notes": "Initial release."
+    }
+  ]
+}
