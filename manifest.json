@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.5",
-    "released_at": "2026-06-01T18:43:21Z",
-    "changelog": "### Showtimes\n\n- The per-showing backdrop option is now labeled \"Show a random backdrop each\n  time\" (previously \"Cycle backdrops\") so its effect is clearer.\n\n### Reliability\n\n- Software updates now apply automatically after you install them \u2014 previously an\n  update could finish staging but not take effect until a manual restart.\n- The \"update available\" prompt now shows and clears reliably.\n- TV power and input status (HDMI-CEC) now update reliably in the web app.\n- More robust trailer downloads.",
+    "version": "1.2.6",
+    "released_at": "2026-06-03T13:53:15Z",
+    "changelog": "### Scheduled Showings\n\n- Showtimes that have already ended now clear themselves automatically within a\n  few minutes, instead of lingering until the next change. The grace period\n  after a showtime ends is now 1 hour.\n- The \"Schedule Showing\" button has moved from the movie grid onto the movie\n  detail view, where it opens pre-filled for that movie.\n\n### Image Integrity\n\n- htMarquee now records a fingerprint of every cached poster, backdrop, and\n  trailer, so it can catch artwork that has gone wrong \u2014 for example a poster\n  file that ended up showing the wrong movie \u2014 not just artwork that's missing.\n- \"Repair Library\" now checks image content as well as presence, and a new\n  \"Rebuild Image Integrity\" button re-downloads all artwork to fix corruption\n  and refresh the fingerprints.\n\n### Backups\n\n- Backups and restores now verify file integrity, and the database is\n  integrity-checked before a restore is trusted \u2014 so a corrupted backup is\n  caught rather than restored over your working library.\n\n### Display\n\n- The DTS-HD Master Audio format badge is now legible on the display (it was\n  rendering too dark to read against the background).\n- Fixed a problem where the display could end up running twice after a restart\n  or update, slowly increasing memory use over time. The display now runs as a\n  single managed process.\n\n### Trailers\n\n- Trailers that were downloaded but silently never played (their length wasn't\n  recorded) now play correctly, and any already in that state are repaired\n  automatically.\n- A trailer whose file has gone missing or can no longer be downloaded is now\n  cleaned up automatically, so the display never tries to play a trailer that\n  isn't there.\n\n### Other\n\n- Fixed the Dashboard \"Playlists\" count showing 0 when playlists existed.\n- The Disk Usage bar now shows space used by backups as its own segment.\n- Removed the QR code / Remote Access panel from Network settings.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5/htmarquee-1.2.5.tar.gz",
-    "tarball_sha256": "88e89163e3305bfb943518152588651bb1dfd6cd9c800219feeb09261093692e",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.5/htmarquee-1.2.5.tar.gz.sig",
-    "size_bytes": 27002353,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.6/htmarquee-1.2.6.tar.gz",
+    "tarball_sha256": "fe5f6e26c78d662f77c333110982e72ae5f687ed167c2f7af33b91f756f625c0",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.6/htmarquee-1.2.6.tar.gz.sig",
+    "size_bytes": 27035756,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.6",
+      "date": "2026-06-03",
+      "notes": "### Scheduled Showings\n\n- Showtimes that have already ended now clear themselves automatically within a\n  few minutes, instead of lingering until the next change. The grace period\n  after a showtime ends is now 1 hour.\n- The \"Schedule Showing\" button has moved from the movie grid onto the movie\n  detail view, where it opens pre-filled for that movie.\n\n### Image Integrity\n\n- htMarquee now records a fingerprint of every cached poster, backdrop, and\n  trailer, so it can catch artwork that has gone wrong \u2014 for example a poster\n  file that ended up showing the wrong movie \u2014 not just artwork that's missing.\n- \"Repair Library\" now checks image content as well as presence, and a new\n  \"Rebuild Image Integrity\" button re-downloads all artwork to fix corruption\n  and refresh the fingerprints.\n\n### Backups\n\n- Backups and restores now verify file integrity, and the database is\n  integrity-checked before a restore is trusted \u2014 so a corrupted backup is\n  caught rather than restored over your working library.\n\n### Display\n\n- The DTS-HD Master Audio format badge is now legible on the display (it was\n  rendering too dark to read against the background).\n- Fixed a problem where the display could end up running twice after a restart\n  or update, slowly increasing memory use over time. The display now runs as a\n  single managed process.\n\n### Trailers\n\n- Trailers that were downloaded but silently never played (their length wasn't\n  recorded) now play correctly, and any already in that state are repaired\n  automatically.\n- A trailer whose file has gone missing or can no longer be downloaded is now\n  cleaned up automatically, so the display never tries to play a trailer that\n  isn't there.\n\n### Other\n\n- Fixed the Dashboard \"Playlists\" count showing 0 when playlists existed.\n- The Disk Usage bar now shows space used by backups as its own segment.\n- Removed the QR code / Remote Access panel from Network settings."
+    },
     {
       "version": "1.2.5",
       "date": "2026-06-01",
