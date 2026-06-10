@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.2.6",
-    "released_at": "2026-06-03T13:53:15Z",
-    "changelog": "### Scheduled Showings\n\n- Showtimes that have already ended now clear themselves automatically within a\n  few minutes, instead of lingering until the next change. The grace period\n  after a showtime ends is now 1 hour.\n- The \"Schedule Showing\" button has moved from the movie grid onto the movie\n  detail view, where it opens pre-filled for that movie.\n\n### Image Integrity\n\n- htMarquee now records a fingerprint of every cached poster, backdrop, and\n  trailer, so it can catch artwork that has gone wrong \u2014 for example a poster\n  file that ended up showing the wrong movie \u2014 not just artwork that's missing.\n- \"Repair Library\" now checks image content as well as presence, and a new\n  \"Rebuild Image Integrity\" button re-downloads all artwork to fix corruption\n  and refresh the fingerprints.\n\n### Backups\n\n- Backups and restores now verify file integrity, and the database is\n  integrity-checked before a restore is trusted \u2014 so a corrupted backup is\n  caught rather than restored over your working library.\n\n### Display\n\n- The DTS-HD Master Audio format badge is now legible on the display (it was\n  rendering too dark to read against the background).\n- Fixed a problem where the display could end up running twice after a restart\n  or update, slowly increasing memory use over time. The display now runs as a\n  single managed process.\n\n### Trailers\n\n- Trailers that were downloaded but silently never played (their length wasn't\n  recorded) now play correctly, and any already in that state are repaired\n  automatically.\n- A trailer whose file has gone missing or can no longer be downloaded is now\n  cleaned up automatically, so the display never tries to play a trailer that\n  isn't there.\n\n### Other\n\n- Fixed the Dashboard \"Playlists\" count showing 0 when playlists existed.\n- The Disk Usage bar now shows space used by backups as its own segment.\n- Removed the QR code / Remote Access panel from Network settings.",
+    "version": "1.2.7",
+    "released_at": "2026-06-10T17:30:55Z",
+    "changelog": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.6/htmarquee-1.2.6.tar.gz",
-    "tarball_sha256": "fe5f6e26c78d662f77c333110982e72ae5f687ed167c2f7af33b91f756f625c0",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.6/htmarquee-1.2.6.tar.gz.sig",
-    "size_bytes": 27035756,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7/htmarquee-1.2.7.tar.gz",
+    "tarball_sha256": "3fc1f9dc88928c22958843053d9875ad42c9ea1b12b6e5393f25be33678454cc",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7/htmarquee-1.2.7.tar.gz.sig",
+    "size_bytes": 27060233,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.2.7",
+      "date": "2026-06-10",
+      "notes": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
+    },
     {
       "version": "1.2.6",
       "date": "2026-06-03",
