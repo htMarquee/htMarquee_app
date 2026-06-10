@@ -1,20 +1,20 @@
 {
   "latest": {
-    "version": "1.2.7rc1",
-    "released_at": "2026-06-10T01:13:29Z",
-    "changelog": "### Security & reliability\n\n- Internal security and reliability improvements.",
+    "version": "1.2.7rc2",
+    "released_at": "2026-06-10T14:41:24Z",
+    "changelog": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc1/htmarquee-1.2.7rc1.tar.gz",
-    "tarball_sha256": "9519bb377b83d2c39c9cd0110dcbe7e70daf2290051d34315d41047baf88b9b4",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc1/htmarquee-1.2.7rc1.tar.gz.sig",
-    "size_bytes": 27057762,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc2/htmarquee-1.2.7rc2.tar.gz",
+    "tarball_sha256": "30f5b1cfca9d5621e218d46bee7faf5f446f2415ec6ae8509b3dae10624f01a2",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc2/htmarquee-1.2.7rc2.tar.gz.sig",
+    "size_bytes": 27054588,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.2.7rc1",
+      "version": "1.2.7rc2",
       "date": "2026-06-10",
-      "notes": "### Security & reliability\n\n- Internal security and reliability improvements."
+      "notes": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
     },
     {
       "version": "1.2.6",
