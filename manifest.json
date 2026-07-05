@@ -1,20 +1,20 @@
 {
   "latest": {
     "version": "1.2.7",
-    "released_at": "2026-06-10T17:30:55Z",
-    "changelog": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
+    "released_at": "2026-07-05T21:47:23Z",
+    "changelog": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
     "min_version": "0.0.1",
     "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7/htmarquee-1.2.7.tar.gz",
-    "tarball_sha256": "3fc1f9dc88928c22958843053d9875ad42c9ea1b12b6e5393f25be33678454cc",
+    "tarball_sha256": "026343ead21e7b43da4a140378758c53b64828c1ecffd6f3807bc56096ab4cac",
     "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7/htmarquee-1.2.7.tar.gz.sig",
-    "size_bytes": 27060233,
+    "size_bytes": 27133480,
     "requires_restart": true
   },
   "releases": [
     {
       "version": "1.2.7",
-      "date": "2026-06-10",
-      "notes": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
+      "date": "2026-07-05",
+      "notes": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
     },
     {
       "version": "1.2.6",
