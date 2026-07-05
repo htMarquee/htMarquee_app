@@ -1,18 +1,23 @@
 {
   "latest": {
-    "version": "1.2.7rc4",
-    "released_at": "2026-06-10T16:38:10Z",
-    "changelog": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
+    "version": "1.2.7rc5",
+    "released_at": "2026-07-05T21:23:28Z",
+    "changelog": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc4/htmarquee-1.2.7rc4.tar.gz",
-    "tarball_sha256": "b31e915a5b916e17616241a8924cfe8e8e617f2e72c8e504cde24e7d76fc6721",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc4/htmarquee-1.2.7rc4.tar.gz.sig",
-    "size_bytes": 27060180,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc5/htmarquee-1.2.7rc5.tar.gz",
+    "tarball_sha256": "e47c638023e2378a1cf11ecdd83342ebfb4a41d724facadc794b90027b3e9cfc",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc5/htmarquee-1.2.7rc5.tar.gz.sig",
+    "size_bytes": 27133379,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.2.7rc4",
+      "version": "1.2.7rc5",
+      "date": "2026-07-05",
+      "notes": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
+    },
+    {
+      "version": "1.2.7",
       "date": "2026-06-10",
       "notes": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
     },
