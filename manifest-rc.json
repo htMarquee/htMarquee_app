@@ -1,25 +1,25 @@
 {
   "latest": {
-    "version": "1.2.7rc5",
-    "released_at": "2026-07-05T21:23:28Z",
-    "changelog": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements.",
+    "version": "1.2.8rc1",
+    "released_at": "2026-07-06T23:37:15Z",
+    "changelog": "### Reliability\n\n- Refreshing a movie now updates the on-screen poster and trailer right away,\n  instead of waiting for the next playlist cycle.\n- Fixed a storage leak where removing cached movies left orphaned trailer files\n  behind \u2014 automatic cleanup now reclaims the space it should.\n- Background network and metadata tasks now recover from temporary errors\n  instead of quietly stopping until the next restart.\n- Faster startup on devices with large trailer libraries.\n\n### Web app\n\n- The **Check for Updates** button no longer falsely reports you're on the\n  latest version when your login session has expired.\n- Fixed the mobile **Install App** button blanking the whole app. The app can\n  now be installed to a phone's home screen; the button appears when your\n  device trusts the display's security certificate.\n\n### Other\n\n- Added third-party attribution notices (TMDB, bundled fonts).",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc5/htmarquee-1.2.7rc5.tar.gz",
-    "tarball_sha256": "e47c638023e2378a1cf11ecdd83342ebfb4a41d724facadc794b90027b3e9cfc",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.7rc5/htmarquee-1.2.7rc5.tar.gz.sig",
-    "size_bytes": 27133379,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.8rc1/htmarquee-1.2.8rc1.tar.gz",
+    "tarball_sha256": "dd661ce9bc9d46cac50f1560b5df84188dae7cfeb1e7e367dc294fcf05276c08",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.2.8rc1/htmarquee-1.2.8rc1.tar.gz.sig",
+    "size_bytes": 27106914,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.2.7rc5",
-      "date": "2026-07-05",
-      "notes": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
+      "version": "1.2.8rc1",
+      "date": "2026-07-06",
+      "notes": "### Reliability\n\n- Refreshing a movie now updates the on-screen poster and trailer right away,\n  instead of waiting for the next playlist cycle.\n- Fixed a storage leak where removing cached movies left orphaned trailer files\n  behind \u2014 automatic cleanup now reclaims the space it should.\n- Background network and metadata tasks now recover from temporary errors\n  instead of quietly stopping until the next restart.\n- Faster startup on devices with large trailer libraries.\n\n### Web app\n\n- The **Check for Updates** button no longer falsely reports you're on the\n  latest version when your login session has expired.\n- Fixed the mobile **Install App** button blanking the whole app. The app can\n  now be installed to a phone's home screen; the button appears when your\n  device trusts the display's security certificate.\n\n### Other\n\n- Added third-party attribution notices (TMDB, bundled fonts)."
     },
     {
       "version": "1.2.7",
-      "date": "2026-06-10",
-      "notes": "### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
+      "date": "2026-07-05",
+      "notes": "### Display\n\n- New **Vertical Position** option in Settings \u2192 Hardware \u2192 Display: choose\n  whether your TV is rotated right (90\u00b0) or left (270\u00b0) into portrait. After\n  changing it you'll be offered a display restart to apply the new position.\n\n### Cache library\n\n- Movie cards now show an **eye-off** badge for titles tied to a date-scoped\n  playlist (hidden from regular rotation until that playlist is active) and a\n  **spotlights** badge for titles with scheduled showtimes.\n- New Cache filters \u2014 show only movies in regular rotation, tied to a\n  date-scoped playlist, in any playlist, or with scheduled showtimes \u2014 and they\n  combine.\n\n### Security & reliability\n\n- Fixed a problem where restoring a backup could corrupt the movie\n  database, leaving the device unable to load its library after the\n  restore. Restores now complete cleanly.\n- Internal security and reliability improvements."
     },
     {
       "version": "1.2.6",
