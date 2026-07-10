@@ -1,18 +1,18 @@
 {
   "latest": {
-    "version": "1.3.0rc1",
-    "released_at": "2026-07-10T14:25:46Z",
+    "version": "1.3.0rc2",
+    "released_at": "2026-07-10T14:56:01Z",
     "changelog": "### Network\n\n- You can now manage the device's network from **Settings \u2192 Network**: set a\n  static IP or use DHCP for the wired and Wi-Fi connections independently, and\n  turn the Wi-Fi radio on or off.\n- New **Prefer wired** option \u2014 when enabled, the device automatically falls back\n  to Wi-Fi if the Ethernet connection loses internet, and switches back to wired\n  when it returns.\n\n### Display\n\n- Fixed slow, jerky trailer playback (and a stray video box that could appear\n  over a trailer). Trailers now play at full, smooth speed again.\n\n### Reliability\n\n- Your display's rotation is now kept across updates \u2014 updating no longer resets\n  a portrait-mounted screen back to its default orientation.\n\n### Performance\n\n- Smoother Showtimes screen, and no brief stutter the first time a movie's\n  trailer plays.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc1/htmarquee-1.3.0rc1.tar.gz",
-    "tarball_sha256": "a2d8570a505b92a2876d2b4c5d743c8af7719c023dcbf8012e5a9dd6eda67ba7",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc1/htmarquee-1.3.0rc1.tar.gz.sig",
-    "size_bytes": 27116777,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc2/htmarquee-1.3.0rc2.tar.gz",
+    "tarball_sha256": "349505270e942ac8c28fa45e0cec245bba4236a656af2658436b10cfb3dd22df",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc2/htmarquee-1.3.0rc2.tar.gz.sig",
+    "size_bytes": 27116275,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.3.0rc1",
+      "version": "1.3.0rc2",
       "date": "2026-07-10",
       "notes": "### Network\n\n- You can now manage the device's network from **Settings \u2192 Network**: set a\n  static IP or use DHCP for the wired and Wi-Fi connections independently, and\n  turn the Wi-Fi radio on or off.\n- New **Prefer wired** option \u2014 when enabled, the device automatically falls back\n  to Wi-Fi if the Ethernet connection loses internet, and switches back to wired\n  when it returns.\n\n### Display\n\n- Fixed slow, jerky trailer playback (and a stray video box that could appear\n  over a trailer). Trailers now play at full, smooth speed again.\n\n### Reliability\n\n- Your display's rotation is now kept across updates \u2014 updating no longer resets\n  a portrait-mounted screen back to its default orientation.\n\n### Performance\n\n- Smoother Showtimes screen, and no brief stutter the first time a movie's\n  trailer plays."
     },
