@@ -1,18 +1,23 @@
 {
   "latest": {
-    "version": "1.3.0rc2",
-    "released_at": "2026-07-10T14:56:01Z",
-    "changelog": "### Network\n\n- You can now manage the device's network from **Settings \u2192 Network**: set a\n  static IP or use DHCP for the wired and Wi-Fi connections independently, and\n  turn the Wi-Fi radio on or off.\n- New **Prefer wired** option \u2014 when enabled, the device automatically falls back\n  to Wi-Fi if the Ethernet connection loses internet, and switches back to wired\n  when it returns.\n\n### Display\n\n- Fixed slow, jerky trailer playback (and a stray video box that could appear\n  over a trailer). Trailers now play at full, smooth speed again.\n\n### Reliability\n\n- Your display's rotation is now kept across updates \u2014 updating no longer resets\n  a portrait-mounted screen back to its default orientation.\n\n### Performance\n\n- Smoother Showtimes screen, and no brief stutter the first time a movie's\n  trailer plays.",
+    "version": "1.4.0rc2",
+    "released_at": "2026-07-11T13:54:40Z",
+    "changelog": "### Dashboard\n\n- New **Display Preview** card (Premiere): see exactly what's showing on your\n  poster display, right from the dashboard. It refreshes every 30 seconds while\n  you're viewing, a refresh button grabs an instant update, and clicking the\n  image opens a larger view. Nothing is captured when you're not looking, and\n  nothing is ever written to the SD card.\n- Fixed the Now Showing card layout: long taglines and the cast list no longer\n  spill outside the card \u2014 the cast is now a scrollable row.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc2/htmarquee-1.3.0rc2.tar.gz",
-    "tarball_sha256": "349505270e942ac8c28fa45e0cec245bba4236a656af2658436b10cfb3dd22df",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.3.0rc2/htmarquee-1.3.0rc2.tar.gz.sig",
-    "size_bytes": 27116275,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.0rc2/htmarquee-1.4.0rc2.tar.gz",
+    "tarball_sha256": "70e15798ca5e63b17d2f5bacd9cd1a99071e5619a302ac96c9c1fc061d247c5e",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.0rc2/htmarquee-1.4.0rc2.tar.gz.sig",
+    "size_bytes": 27165410,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.3.0rc2",
+      "version": "1.4.0rc2",
+      "date": "2026-07-11",
+      "notes": "### Dashboard\n\n- New **Display Preview** card (Premiere): see exactly what's showing on your\n  poster display, right from the dashboard. It refreshes every 30 seconds while\n  you're viewing, a refresh button grabs an instant update, and clicking the\n  image opens a larger view. Nothing is captured when you're not looking, and\n  nothing is ever written to the SD card.\n- Fixed the Now Showing card layout: long taglines and the cast list no longer\n  spill outside the card \u2014 the cast is now a scrollable row."
+    },
+    {
+      "version": "1.3.0",
       "date": "2026-07-10",
       "notes": "### Network\n\n- You can now manage the device's network from **Settings \u2192 Network**: set a\n  static IP or use DHCP for the wired and Wi-Fi connections independently, and\n  turn the Wi-Fi radio on or off.\n- New **Prefer wired** option \u2014 when enabled, the device automatically falls back\n  to Wi-Fi if the Ethernet connection loses internet, and switches back to wired\n  when it returns.\n\n### Display\n\n- Fixed slow, jerky trailer playback (and a stray video box that could appear\n  over a trailer). Trailers now play at full, smooth speed again.\n\n### Reliability\n\n- Your display's rotation is now kept across updates \u2014 updating no longer resets\n  a portrait-mounted screen back to its default orientation.\n\n### Performance\n\n- Smoother Showtimes screen, and no brief stutter the first time a movie's\n  trailer plays."
     },
