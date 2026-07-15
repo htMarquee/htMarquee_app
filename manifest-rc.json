@@ -1,18 +1,23 @@
 {
   "latest": {
-    "version": "1.4.0rc2",
-    "released_at": "2026-07-11T13:54:40Z",
-    "changelog": "### Dashboard\n\n- New **Display Preview** card (Premiere): see exactly what's showing on your\n  poster display, right from the dashboard. It refreshes every 30 seconds while\n  you're viewing, a refresh button grabs an instant update, and clicking the\n  image opens a larger view. Nothing is captured when you're not looking, and\n  nothing is ever written to the SD card.\n- Fixed the Now Showing card layout: long taglines and the cast list no longer\n  spill outside the card \u2014 the cast is now a scrollable row.",
+    "version": "1.4.1rc1",
+    "released_at": "2026-07-15T21:05:11Z",
+    "changelog": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.0rc2/htmarquee-1.4.0rc2.tar.gz",
-    "tarball_sha256": "70e15798ca5e63b17d2f5bacd9cd1a99071e5619a302ac96c9c1fc061d247c5e",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.0rc2/htmarquee-1.4.0rc2.tar.gz.sig",
-    "size_bytes": 27165410,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc1/htmarquee-1.4.1rc1.tar.gz",
+    "tarball_sha256": "897e92f5c64bbf32c76fe22ea476736f44dad9d6dd9b253b3734a2a72e1bd81c",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc1/htmarquee-1.4.1rc1.tar.gz.sig",
+    "size_bytes": 27169501,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.4.0rc2",
+      "version": "1.4.1rc1",
+      "date": "2026-07-15",
+      "notes": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended."
+    },
+    {
+      "version": "1.4.0",
       "date": "2026-07-11",
       "notes": "### Dashboard\n\n- New **Display Preview** card (Premiere): see exactly what's showing on your\n  poster display, right from the dashboard. It refreshes every 30 seconds while\n  you're viewing, a refresh button grabs an instant update, and clicking the\n  image opens a larger view. Nothing is captured when you're not looking, and\n  nothing is ever written to the SD card.\n- Fixed the Now Showing card layout: long taglines and the cast list no longer\n  spill outside the card \u2014 the cast is now a scrollable row."
     },
