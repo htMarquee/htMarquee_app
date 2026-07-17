@@ -1,20 +1,20 @@
 {
   "latest": {
-    "version": "1.4.1rc2",
-    "released_at": "2026-07-17T15:37:49Z",
-    "changelog": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.\n- **TV power control is more reliable.** If an HDMI-CEC on/off command doesn't\n  reach the TV on the first try (some TVs occasionally don't respond in time) \u2014\n  whether from the schedule or the power buttons \u2014 htMarquee now retries\n  automatically instead of giving up.",
+    "version": "1.4.1rc3",
+    "released_at": "2026-07-17T21:57:02Z",
+    "changelog": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.\n- **TV power control is more reliable.** If an HDMI-CEC on/off command doesn't\n  reach the TV on the first try (some TVs occasionally don't respond in time) \u2014\n  whether from the schedule or the power buttons \u2014 htMarquee now retries\n  automatically instead of giving up.\n- **Enabling HTTPS can no longer lock you out.** If HTTPS is turned on but its\n  certificate is missing, htMarquee now stays reachable over plain HTTP instead\n  of becoming unreachable.",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc2/htmarquee-1.4.1rc2.tar.gz",
-    "tarball_sha256": "6a5f160597794fb33b2d66a7bf2d3a378f4512db5837ce13529c60e6fd70de5f",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc2/htmarquee-1.4.1rc2.tar.gz.sig",
-    "size_bytes": 27170720,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc3/htmarquee-1.4.1rc3.tar.gz",
+    "tarball_sha256": "fc9b4c76e5e19230bb70fa885a5303615fe6a024c2b1fb88c7d4278a99c3739c",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1rc3/htmarquee-1.4.1rc3.tar.gz.sig",
+    "size_bytes": 27176243,
     "requires_restart": true
   },
   "releases": [
     {
-      "version": "1.4.1rc2",
+      "version": "1.4.1rc3",
       "date": "2026-07-17",
-      "notes": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.\n- **TV power control is more reliable.** If an HDMI-CEC on/off command doesn't\n  reach the TV on the first try (some TVs occasionally don't respond in time) \u2014\n  whether from the schedule or the power buttons \u2014 htMarquee now retries\n  automatically instead of giving up."
+      "notes": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.\n- **TV power control is more reliable.** If an HDMI-CEC on/off command doesn't\n  reach the TV on the first try (some TVs occasionally don't respond in time) \u2014\n  whether from the schedule or the power buttons \u2014 htMarquee now retries\n  automatically instead of giving up.\n- **Enabling HTTPS can no longer lock you out.** If HTTPS is turned on but its\n  certificate is missing, htMarquee now stays reachable over plain HTTP instead\n  of becoming unreachable."
     },
     {
       "version": "1.4.0",
