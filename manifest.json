@@ -1,16 +1,21 @@
 {
   "latest": {
-    "version": "1.4.1",
-    "released_at": "2026-08-04T20:49:07Z",
-    "changelog": "### Fixes\n\n- **Showtimes board no longer hidden behind a poster.** After a movie shown with\n  an animated poster and no trailer, the \"Playing Soon\" board could be covered by\n  a blank, banner-less copy of that movie's poster for the whole showtimes\n  duration. The board now displays correctly.\n- **Animated posters play at the right speed on first show.** The first animated\n  poster after the display starts up could run in slow motion (about half speed)\n  at 4K; it now plays at full speed from the start.\n- **Video slides play at the right speed too.** The same slow-motion problem\n  affected video slides \u2014 the first time each one played after a restart or an\n  update, it could run at about half speed. Slides now play at full speed\n  immediately.\n- **Trailers download in a format your Pi can play smoothly \u2014 without giving\n  up quality.** Some trailers were being fetched in a video format the Pi 5\n  cannot decode fast enough, causing stutter. htMarquee now prefers full-HD\n  downloads it can play cleanly, and converts high-frame-rate trailers once at\n  download time so they stay both sharp and smooth.\n- **High-frame-rate trailers no longer play in slow motion.** Trailers at 50\n  or 60 frames per second could play at roughly half speed on the display.\n  They now play at normal speed \u2014 including ones already in your library.\n- **The trailer list now shows only trailers you actually have.** A\n  long-standing issue could mark alternate trailers as \"downloaded\" when they\n  weren't, showing duplicate entries that all played the same video \u2014 and\n  deleting one of them could remove a real trailer's file. The list now cleans\n  itself up automatically on startup, and deleting a trailer can never remove\n  another trailer's file.\n- **Backups now remember your display orientation.** The screen-rotation\n  setting wasn't included in backups, so restoring onto a new device could\n  leave a rotated display back at its default orientation. Backups now capture\n  it and restores apply it automatically.\n- **Scheduled playlists stay in their date range after a restart.** A playlist\n  limited to a season \u2014 a Christmas list, say \u2014 could briefly take over after a\n  reboot even outside its dates. It now waits for its date window, restart or\n  not.\n- **The web app stays responsive while it works with images.** Uploading a\n  banner, slide or format icon, or generating a colour theme from a poster,\n  could briefly freeze the rest of the app and stall the display. That work now\n  happens in the background.\n- **Backup restore repairs your library again.** After restoring a backup, the\n  automatic repair that re-fetches any missing poster or backdrop art was\n  silently skipped; it now runs as intended.\n- **TV power control is more reliable.** If an HDMI-CEC on/off command doesn't\n  reach the TV on the first try (some TVs occasionally don't respond in time) \u2014\n  whether from the schedule or the power buttons \u2014 htMarquee now retries\n  automatically instead of giving up.\n- **Enabling HTTPS can no longer lock you out.** If HTTPS is turned on but its\n  certificate is missing, htMarquee now stays reachable over plain HTTP instead\n  of becoming unreachable.\n\n### Security\n\n- **Updated image and file-upload handling.** Picked up the latest security\n  releases of the third-party libraries htMarquee uses to read uploaded images\n  and receive file uploads.\n- **The display no longer leaves local screen access open.** A permission needed\n  only by a retired video playback path was being granted on every boot; it is\n  now granted only if that path is actually in use.",
+    "version": "1.4.2",
+    "released_at": "2026-08-05T14:22:45Z",
+    "changelog": "### Security\n\n- **License verification now uses its own dedicated signing key**, separate from\n  the key that signs software updates. Licenses issued before this release must\n  be re-issued (no customer licenses were affected).",
     "min_version": "0.0.1",
-    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1/htmarquee-1.4.1.tar.gz",
-    "tarball_sha256": "43984ef1b51dbae72fb62bec97bf035c7104d68f2822281c1ce879ec950d259c",
-    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.1/htmarquee-1.4.1.tar.gz.sig",
-    "size_bytes": 48328417,
+    "tarball_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.2/htmarquee-1.4.2.tar.gz",
+    "tarball_sha256": "342d9054405de0a4694452c5f2b03248a2dc1e53c94aaff20c3398c869208bd5",
+    "signature_url": "https://github.com/htMarquee/htMarquee_app/releases/download/v1.4.2/htmarquee-1.4.2.tar.gz.sig",
+    "size_bytes": 48328621,
     "requires_restart": true
   },
   "releases": [
+    {
+      "version": "1.4.2",
+      "date": "2026-08-05",
+      "notes": "### Security\n\n- **License verification now uses its own dedicated signing key**, separate from\n  the key that signs software updates. Licenses issued before this release must\n  be re-issued (no customer licenses were affected)."
+    },
     {
       "version": "1.4.1",
       "date": "2026-08-04",
